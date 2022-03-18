@@ -5,7 +5,7 @@ interface Normal {
   text: string;
 }
 
-export function NormalButton(props: Normal) {
+export default function NormalButton(props: Normal) {
   const onClick = () => {
     console.log('hi');
   };

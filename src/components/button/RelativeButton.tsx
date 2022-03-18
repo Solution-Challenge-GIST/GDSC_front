@@ -5,7 +5,7 @@ interface Relative {
   name: string;
   relative: string;
 }
-export function Relativebutton(props: Relative) {
+export default function Relativebutton(props: Relative) {
   const onClick = () => {
     console.log('hi');
   };
