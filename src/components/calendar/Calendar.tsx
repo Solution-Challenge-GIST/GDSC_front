@@ -10,7 +10,7 @@ interface date {
 
 export default function Calendar(props: date) {
   if (props.fontSize === 'big') {
-    return <View></View>;
+    return <View style></View>;
   } else {
     return <View></View>;
   }
