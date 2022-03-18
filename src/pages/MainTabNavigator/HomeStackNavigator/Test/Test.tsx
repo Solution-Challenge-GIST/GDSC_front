@@ -3,6 +3,7 @@ import React from 'react';
 import NormalButton from '../../../../components/button/NormalButton';
 import Relativebutton from '../../../../components/button/RelativeButton';
 import Normalinput from '../../../../components/input/NormalInputs';
+import QuestionBox from '../../../../components/QuestionBox/QuestionBox';
 
 export default function Test() {
   return (
@@ -10,6 +11,7 @@ export default function Test() {
       <NormalButton text={'hi'}></NormalButton>
       <Relativebutton name={'용환'} relative={'you'}></Relativebutton>
       <Normalinput></Normalinput>
+      <QuestionBox />
     </View>
   );
 }

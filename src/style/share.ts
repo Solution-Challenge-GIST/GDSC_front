@@ -1,5 +1,6 @@
 export const baseColor = '#FFF7DA';
 export const mediumFontWeight = '400';
+export const boldFontWeight = '700';
 export const mediumFontSize = 30;
 
 export const shadow = {
