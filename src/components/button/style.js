@@ -1,15 +1,11 @@
 import { StyleSheet } from 'react-native';
-import {
-  primaryColor,
-  primaryFontWeight,
-  primaryFontSize,
-} from '../../style/share';
+import { baseColor, mediumFontWeight, mediumFontSize } from '../../style/share';
 const Commonbutton = {
   width: 390,
   height: 88,
-  backgroundColor: primaryColor,
+  backgroundColor: baseColor,
   borderWidth: 20,
-  borderColor: primaryColor,
+  borderColor: baseColor,
   borderRadius: 44,
   flex: 1,
   justifyContent: 'center',
@@ -34,8 +30,8 @@ export const styles = StyleSheet.create({
     ...Commonbutton,
   },
   buttonfont: {
-    fontWeight: primaryFontWeight,
-    fontSize: primaryFontSize,
+    fontWeight: mediumFontWeight,
+    fontSize: mediumFontSize,
   },
   Relativebutton: {
     ...Commonbutton,
