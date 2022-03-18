@@ -5,3 +5,5 @@
 [React navigation Docs](https://reactnavigation.org/docs/hello-react-navigation)
 
 [React Query Docs](https://react-query.tanstack.com/overview)
+
+[Stack / Tab Navigator 같이 사용하기](https://dev.to/easybuoy/combining-stack-tab-drawer-navigations-in-react-native-with-react-navigation-5-da)
