@@ -11,7 +11,7 @@ export default function Test() {
       <NormalButton text={'hi'}></NormalButton>
       <Relativebutton name={'용환'} relative={'you'}></Relativebutton>
       <Normalinput></Normalinput>
-      <QuestionBox />
+      <QuestionBox payload="내 자식이 한 일 중에 가장 기뻤던 일은?" />
     </View>
   );
 }
