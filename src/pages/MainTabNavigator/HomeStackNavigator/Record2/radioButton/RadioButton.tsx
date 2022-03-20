@@ -9,7 +9,6 @@ interface Props {
 
 export default function RadioButton(props: Props) {
   const { onPress, type } = props;
-  console.log(type);
   return (
     <TouchableOpacity onPress={onPress}>
       {type === 'play' && (

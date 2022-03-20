@@ -13,6 +13,12 @@ export const record2Styles = StyleSheet.create({
     marginTop: getDisplayHeight(85),
     marginBottom: getDisplayHeight(55),
   },
+  radioImageStatus: {
+    width: getDisplayWidth(261),
+    height: getDisplayHeight(261),
+    marginTop: getDisplayHeight(28),
+    marginBottom: getDisplayHeight(17),
+  },
   buttonImage: {
     width: getDisplayWidth(88),
     height: getDisplayWidth(88),
