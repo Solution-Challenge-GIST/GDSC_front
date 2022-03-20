@@ -3,7 +3,9 @@ export const bgColor = '#E5E5E5';
 
 export const mediumFontWeight = '400';
 export const boldFontWeight = '700';
+
 export const mediumFontSize = 30;
+export const juniorMediumFontSize = 18;
 
 export const shadow = {
   shadowColor: '#000',
