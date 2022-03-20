@@ -17,21 +17,21 @@ export default function Test() {
             <Relativebutton
               name={'배정윤'}
               relative={'딸'}
-              onChange={onChange}
+              onPress={onChange}
             ></Relativebutton>
           </View>
           <View>
             <Relativebutton
               name={'이주찬'}
               relative={'아들'}
-              onChange={onChange}
+              onPress={onChange}
             ></Relativebutton>
           </View>
           <View>
             <Relativebutton
               name={'조용환'}
               relative={'손자'}
-              onChange={onChange}
+              onPress={onChange}
             ></Relativebutton>
           </View>
         </View>

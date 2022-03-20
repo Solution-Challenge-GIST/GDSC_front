@@ -4,11 +4,11 @@ import { styles } from './style.js';
 interface Relative {
   name: string;
   relative: string;
-  onChange: Function;
+  onPress: Function;
 }
 export default function RelativeButton(props: Relative) {
   return (
-    <TouchableOpacity onPress={props.onChange}>
+    <TouchableOpacity onPress={props.onPress}>
       <View style={styles.Relativebutton}>
         <View style={styles.RelativeLeft}>
           <Text style={styles.buttonfont}>{props.name}</Text>
