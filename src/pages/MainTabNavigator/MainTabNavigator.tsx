@@ -12,9 +12,12 @@ export default function MainTabNavigator() {
       initialRouteName="Home"
       screenOptions={{ headerShown: false }}
     >
-      <Tab.Screen name="Album" component={AlbumStackNavigator} />
-      <Tab.Screen name="Home" component={HomeStackNavigator} />
-      <Tab.Screen name="Profile" component={ProfileStackNavigator} />
+      <Tab.Screen name="AlbumStackNavigator" component={AlbumStackNavigator} />
+      <Tab.Screen name="HomeStackNavigator" component={HomeStackNavigator} />
+      <Tab.Screen
+        name="ProProfileStackNavigatorfile"
+        component={ProfileStackNavigator}
+      />
     </Tab.Navigator>
   );
 }
