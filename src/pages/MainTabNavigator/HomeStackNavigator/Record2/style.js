@@ -13,7 +13,7 @@ export const record2Styles = StyleSheet.create({
     marginTop: getDisplayHeight(85),
     marginBottom: getDisplayHeight(55),
   },
-  radioImageStatus: {
+  radioImageRecoding: {
     width: getDisplayWidth(261),
     height: getDisplayHeight(261),
     marginTop: getDisplayHeight(28),

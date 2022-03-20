@@ -48,17 +48,17 @@ export default function Record2() {
               지금 열심히 기록되고 있어요...
             </Text>
             <Image
-              style={record2Styles.radioImageStatus}
+              style={record2Styles.radioImageRecoding}
               source={require('./images/recodingRadio.png')}
             />
           </>
         )}
         {!isRecoding && hasRecordFile && (
           <>
-            <Text style={record2Styles.font}>기록이 멈췄어요!</Text>
-            <Text style={record2Styles.font}>저장할까요?</Text>
+            {/* <Text style={record2Styles.font}>기록이 멈췄어요!</Text> */}
+            <Text style={record2Styles.font}>기록되었어요! 저장할까요?</Text>
             <Image
-              style={record2Styles.radioImageStatus}
+              style={record2Styles.radioImageRecoding}
               source={require('./images/recordDoneRadio.png')}
             />
           </>
@@ -81,6 +81,18 @@ export default function Record2() {
           <RadioButton type="play" onPress={() => console.log('play')} />
           <RadioButton type="stop" onPress={() => console.log('stop')} />
         </View>
+        {hasRecordFile && !isRecoding && (
+          <View
+            style={{
+              height: getDisplayHeight(191),
+              marginTop: getDisplayHeight(28),
+              justifyContent: 'space-between',
+            }}
+          >
+            <NormalButton text="저장하기" />
+            <NormalButton text="지우고 다시 녹음하기" />
+          </View>
+        )}
       </View>
     </SafeAreaView>
   );
