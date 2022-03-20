@@ -1,5 +1,5 @@
 export const baseColor = '#FFF7DA';
-export const bgColor = '#fff';
+export const bgColor = '#E5E5E5';
 
 export const mediumFontWeight = '400';
 export const boldFontWeight = '700';
