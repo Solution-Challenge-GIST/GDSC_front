@@ -5,16 +5,13 @@ import {
   mediumFontSize,
   shadow,
 } from '../../style/share';
+import { getDisplayHeight, getDisplayWidth } from '../../utility';
+
 const Commonbutton = {
-  width: 390,
-  height: 88,
   backgroundColor: baseColor,
-  borderWidth: 20,
+  borderWidth: 2,
   borderColor: baseColor,
   borderRadius: 44,
-  flex: 1,
-  justifyContent: 'center',
-  alignItems: 'center',
   ...shadow,
 };
 const CommonRelative = {
@@ -24,17 +21,25 @@ const CommonRelative = {
 };
 export const styles = StyleSheet.create({
   Normalbutton: {
+    width: getDisplayWidth(390),
+    height: getDisplayHeight(88),
     ...Commonbutton,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   buttonfont: {
     fontWeight: mediumFontWeight,
     fontSize: mediumFontSize,
   },
   Relativebutton: {
+    width: getDisplayWidth(373),
+    height: getDisplayHeight(112),
     ...Commonbutton,
     flexDirection: 'row',
   },
   RelativeLeft: {
+    marginTop: 15,
+    marginBottom: 15,
     ...CommonRelative,
     borderRightWidth: 2,
     borderColor: '#D1C9AB',
