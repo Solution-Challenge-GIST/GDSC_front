@@ -7,7 +7,7 @@ const Textform = {
   fontSize: mediumFontSize,
 };
 export const styles = StyleSheet.create({
-  infoComponent: {
+  imageComponent: {
     marginLeft: getDisplayWidth(27),
     marginRight: getDisplayWidth(27),
     marginTop: getDisplayHeight(62),
@@ -37,5 +37,12 @@ export const styles = StyleSheet.create({
   profileName_small: {
     fontWeight: '700',
     fontSize: 18,
+  },
+  infoComponent: {
+    marginTop: getDisplayHeight(22),
+    height: getDisplayHeight(655),
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    marginBottom: getDisplayHeight(74),
   },
 });
