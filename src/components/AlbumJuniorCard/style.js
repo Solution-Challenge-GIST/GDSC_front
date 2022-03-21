@@ -1,6 +1,7 @@
 import { StyleSheet } from 'react-native';
 import {
   bgColor,
+  boxBorderRadious,
   juniorMediumFontSize,
   juniorSmallFontSize,
   mediumFontWeight,
@@ -13,7 +14,7 @@ export const AlbumJuniorCardStyles = StyleSheet.create({
     width: getDisplayWidth(182),
     height: getDisplayHeight(310),
     backgroundColor: bgColor,
-    borderRadius: getDisplayWidth(26),
+    borderRadius: boxBorderRadious,
     ...shadow,
   },
 
