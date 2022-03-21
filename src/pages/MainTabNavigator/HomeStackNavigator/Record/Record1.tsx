@@ -31,8 +31,9 @@ interface person {
   relative: string;
 }
 export default function Test() {
+  const navigation = useNavigation();
   const onChange = (props: person) => {
-    console.log(props);
+    navigation.navigate('Record2', { person: props });
   };
 
   return (

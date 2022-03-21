@@ -4,7 +4,7 @@ import {
   mediumFontWeight,
 } from '../../../../style/share';
 import { getDisplayHeight, getDisplayWidth } from '../../../../utility';
-
+import { Commonbutton } from '../../../../components/button/style';
 const textForm = {
   fontWeight: mediumFontWeight,
   fontSize: seniorMediumFontSize,
