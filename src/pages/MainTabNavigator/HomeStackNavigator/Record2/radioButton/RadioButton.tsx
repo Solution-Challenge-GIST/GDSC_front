@@ -4,41 +4,23 @@ import { record2Styles } from '../style';
 
 interface Props {
   onPress: Function;
-  type: 'pause' | 'play' | 'recoding' | 'unrecord' | 'stop';
+  type: 'record' | 'stop';
 }
 
 export default function RadioButton(props: Props) {
   const { onPress, type } = props;
   return (
     <TouchableOpacity onPress={onPress}>
-      {type === 'play' && (
+      {type === 'record' && (
         <Image
           style={record2Styles.buttonImage}
-          source={require('../images/play.png')}
-        />
-      )}
-      {type === 'pause' && (
-        <Image
-          style={record2Styles.buttonImage}
-          source={require('../images/pause.png')}
-        />
-      )}
-      {type === 'recoding' && (
-        <Image
-          style={record2Styles.buttonImage}
-          source={require('../images/recoding.png')}
+          source={require('../images/record.png')}
         />
       )}
       {type === 'stop' && (
         <Image
           style={record2Styles.buttonImage}
           source={require('../images/stop.png')}
-        />
-      )}
-      {type === 'unrecord' && (
-        <Image
-          style={record2Styles.buttonImage}
-          source={require('../images/unrecord.png')}
         />
       )}
     </TouchableOpacity>
