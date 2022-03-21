@@ -23,6 +23,7 @@ export const styles = StyleSheet.create({
     backgroundColor: baseColor,
   },
   ProfileName: {
+    marginBottom: 7,
     fontWeight: mediumFontWeight,
     fontSize: seniorMediumFontSize,
   },

@@ -7,7 +7,7 @@ import {
 } from '../../style/share';
 import { getDisplayHeight, getDisplayWidth } from '../../utility';
 
-const Commonbutton = {
+export const Commonbutton = {
   backgroundColor: baseColor,
   borderWidth: 2,
   borderColor: baseColor,

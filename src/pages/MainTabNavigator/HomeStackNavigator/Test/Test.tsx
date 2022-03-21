@@ -31,8 +31,6 @@ export default function Test() {
         isReplied={true}
       />
       <AlbumJuniorVoice id={3} />
-      <Normalinput></Normalinput>
-      <QuestionBox payload="내 자식이 한 일 중에 가장 기뻤던 일은?" />
     </SafeAreaView>
   );
 }

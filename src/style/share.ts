@@ -6,6 +6,7 @@ export const bgColor = '#E5E5E5';
 
 // fontWeight
 export const mediumFontWeight = '400';
+export const semiBoldFontWeight = '600';
 export const boldFontWeight = '700';
 
 // fontSize
