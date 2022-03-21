@@ -1,11 +1,13 @@
 import { StyleSheet } from 'react-native';
-import { Commonbutton } from '../../../../components/button/style';
-import { mediumFontSize, mediumFontWeight } from '../../../../style/share';
+import {
+  seniorMediumFontSize,
+  mediumFontWeight,
+} from '../../../../style/share';
 import { getDisplayHeight, getDisplayWidth } from '../../../../utility';
 
 const textForm = {
   fontWeight: mediumFontWeight,
-  fontSize: mediumFontSize,
+  fontSize: seniorMediumFontSize,
 };
 export const profileStyles = StyleSheet.create({
   imageComponent: {

@@ -1,27 +1,30 @@
 import { StyleSheet } from 'react-native';
-import { mediumFontSize, mediumFontWeight } from '../../../../style/share';
+import {
+  seniorMediumFontSize,
+  mediumFontWeight,
+} from '../../../../style/share';
 import { getDisplayHeight, getDisplayWidth } from '../../../../utility';
 
 export const record2Styles = StyleSheet.create({
   font: {
     fontWeight: mediumFontWeight,
-    fontSize: mediumFontSize - 1,
+    fontSize: seniorMediumFontSize - 1,
   },
   radioImage: {
-    width: getDisplayWidth(168),
-    height: getDisplayHeight(168),
+    width: getDisplayWidth(240),
+    height: getDisplayHeight(240),
     marginTop: getDisplayHeight(85),
     marginBottom: getDisplayHeight(55),
   },
   radioImageRecoding: {
-    width: getDisplayWidth(261),
-    height: getDisplayHeight(261),
-    marginTop: getDisplayHeight(28),
+    width: getDisplayWidth(350),
+    height: getDisplayHeight(350),
+    marginTop: getDisplayHeight(30),
     marginBottom: getDisplayHeight(17),
   },
   buttonImage: {
-    width: getDisplayWidth(88),
-    height: getDisplayWidth(88),
+    width: getDisplayWidth(150),
+    height: getDisplayWidth(150),
     resizeMode: 'contain',
   },
 });

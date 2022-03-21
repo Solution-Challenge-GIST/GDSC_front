@@ -22,6 +22,12 @@ export default function Record2() {
     setIsRecoding(prev => !prev);
   };
 
+  const onReRecord = () => {
+    setIsRecoding(false);
+    sethasRecordFile(false);
+    //저장된 레코드 파일을 지운는 행동? 추가될 수 있음
+  };
+
   return (
     <SafeAreaView>
       <View
@@ -67,19 +73,16 @@ export default function Record2() {
         <View
           style={{
             flexDirection: 'row',
-            justifyContent: 'space-between',
+            justifyContent: 'center',
             width: '100%',
           }}
         >
           {!hasRecordFile && !isRecoding && (
-            <RadioButton type="unrecord" onPress={toggleRecoding} />
+            <RadioButton type="record" onPress={toggleRecoding} />
           )}
           {!hasRecordFile && isRecoding && (
-            <RadioButton type="recoding" onPress={toggleRecoding} />
+            <RadioButton type="stop" onPress={toggleRecoding} />
           )}
-          <RadioButton type="pause" onPress={() => console.log('pause')} />
-          <RadioButton type="play" onPress={() => console.log('play')} />
-          <RadioButton type="stop" onPress={() => console.log('stop')} />
         </View>
         {hasRecordFile && !isRecoding && (
           <View
@@ -89,8 +92,11 @@ export default function Record2() {
               justifyContent: 'space-between',
             }}
           >
-            <NormalButton text="저장하기" />
-            <NormalButton text="지우고 다시 녹음하기" />
+            <NormalButton
+              onPress={() => console.log('서버로 음성파일 보내는 함수 실행')}
+              text="저장하기"
+            />
+            <NormalButton onPress={onReRecord} text="지우고 다시 녹음하기" />
           </View>
         )}
       </View>

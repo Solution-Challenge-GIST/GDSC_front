@@ -2,7 +2,7 @@ import { StyleSheet } from 'react-native';
 import {
   baseColor,
   mediumFontWeight,
-  mediumFontSize,
+  seniorMediumFontSize,
   shadow,
 } from '../../style/share';
 import { getDisplayHeight, getDisplayWidth } from '../../utility';
@@ -29,7 +29,7 @@ export const styles = StyleSheet.create({
   },
   buttonfont: {
     fontWeight: mediumFontWeight,
-    fontSize: mediumFontSize,
+    fontSize: seniorMediumFontSize,
   },
   Relativebutton: {
     width: getDisplayWidth(373),
