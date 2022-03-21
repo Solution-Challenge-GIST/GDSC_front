@@ -2,6 +2,7 @@ import { StyleSheet } from 'react-native';
 import {
   seniorMediumFontSize,
   mediumFontWeight,
+  semiBoldFontWeight,
 } from '../../../../style/share';
 import { getDisplayHeight, getDisplayWidth } from '../../../../utility';
 
@@ -26,5 +27,15 @@ export const record2Styles = StyleSheet.create({
     width: getDisplayWidth(150),
     height: getDisplayWidth(150),
     resizeMode: 'contain',
+  },
+  buttonText: {
+    fontWeight: semiBoldFontWeight,
+    fontSize: seniorMediumFontSize,
+    marginTop: getDisplayHeight(18),
+  },
+  recordDoneButtonsContainer: {
+    height: getDisplayHeight(191),
+    marginTop: getDisplayHeight(28),
+    justifyContent: 'space-between',
   },
 });
