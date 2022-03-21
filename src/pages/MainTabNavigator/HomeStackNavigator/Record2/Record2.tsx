@@ -79,28 +79,22 @@ export default function Record2(props) {
           </>
         )}
 
-        <View
-          style={{
-            flexDirection: 'row',
-            justifyContent: 'center',
-            width: '100%',
-          }}
-        >
+        <View style={{ flexDirection: 'row', justifyContent: 'center' }}>
           {!hasRecordFile && !isRecoding && (
-            <RadioButton type="record" onPress={toggleRecoding} />
+            <View style={{ alignItems: 'center' }}>
+              <RadioButton type="record" onPress={toggleRecoding} />
+              <Text style={record2Styles.buttonText}>녹음 시작</Text>
+            </View>
           )}
           {!hasRecordFile && isRecoding && (
-            <RadioButton type="stop" onPress={toggleRecoding} />
+            <View style={{ alignItems: 'center' }}>
+              <RadioButton type="stop" onPress={toggleRecoding} />
+              <Text style={record2Styles.buttonText}>녹음 멈추기</Text>
+            </View>
           )}
         </View>
         {hasRecordFile && !isRecoding && (
-          <View
-            style={{
-              height: getDisplayHeight(191),
-              marginTop: getDisplayHeight(28),
-              justifyContent: 'space-between',
-            }}
-          >
+          <View style={record2Styles.recordDoneButtonsContainer}>
             <NormalButton
               onPress={() => console.log('서버로 음성파일 보내는 함수 실행')}
               text="저장하기"
