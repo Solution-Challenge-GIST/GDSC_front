@@ -1,16 +1,16 @@
 import { TextInput } from 'react-native';
-import { useState } from 'react';
 import { styles } from './style';
-
-export default function Normalinput() {
-  const [text, setText] = useState('');
-
+interface inputData {
+  onChangeText: Function;
+  value: string;
+}
+export default function Normalinput(props: inputData) {
   return (
     <TextInput
       style={styles.NormalInput}
-      onChangeText={setText}
+      onChangeText={props.onChangeText}
       placeholder={'예) 홍길동'}
-      value={text}
+      value={props.value}
     />
   );
 }
