@@ -6,6 +6,7 @@ export const boldFontWeight = '700';
 
 export const mediumFontSize = 30;
 export const juniorMediumFontSize = 18;
+export const juniorSmallFontSize = 11;
 
 export const shadow = {
   shadowColor: '#000',
