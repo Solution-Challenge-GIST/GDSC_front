@@ -2,9 +2,8 @@ import { View, Text, Image } from 'react-native';
 import React from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import ProfileInput from '../../../../components/input/ProfileInput';
-import { ScrollView } from 'react-native-gesture-handler';
-import { styles } from './style';
-import NormalButton from '../../../../components/button/NormalButton';
+import { ScrollView, TouchableOpacity } from 'react-native-gesture-handler';
+import { profileStyles } from './style';
 
 export default function Profile() {
   const onPress = () => {
@@ -12,27 +11,35 @@ export default function Profile() {
   };
   return (
     <SafeAreaView>
-      <ScrollView>
-        <View style={styles.imageComponent}>
-          <Text style={styles.info}>내 정보</Text>
-          <View style={styles.align}>
-            <View style={styles.image}></View>
-            <View style={styles.profileName}>
-              <Text style={styles.profileName_big}>김갑수</Text>
-              <Text style={styles.profileName_small}>님</Text>
+      <ScrollView contentContainerStyle={{ flexGrow: 1 }} bounces={true}>
+        <View style={{ flex: 1 }}>
+          <View style={profileStyles.imageComponent}>
+            <Text style={profileStyles.info}>내 정보</Text>
+            <View style={profileStyles.align}>
+              <View style={profileStyles.image}></View>
+              <View style={profileStyles.profileName}>
+                <Text style={profileStyles.profileName_big}>김갑수</Text>
+                <Text style={profileStyles.profileName_small}>님</Text>
+              </View>
             </View>
           </View>
+          <View style={profileStyles.infoComponent}>
+            <ProfileInput name={'나이'}></ProfileInput>
+            <ProfileInput name={'사는 곳'}></ProfileInput>
+            <ProfileInput name={'지병'}></ProfileInput>
+            <ProfileInput name={'비상 연락망'}></ProfileInput>
+            <ProfileInput name={'특이사항'}></ProfileInput>
+          </View>
+          <View style={{ alignItems: 'center' }}>
+            <TouchableOpacity onPress={onPress} style={profileStyles.fixbutton}>
+              <Image
+                style={profileStyles.fixImage}
+                source={require('../settings.png')}
+              />
+              <Text style={profileStyles.info}>수정하기</Text>
+            </TouchableOpacity>
+          </View>
         </View>
-        <View style={styles.infoComponent}>
-          <ProfileInput name={'나이'}></ProfileInput>
-          <ProfileInput name={'사는 곳'}></ProfileInput>
-          <ProfileInput name={'지병'}></ProfileInput>
-          <ProfileInput name={'비상 연락망'}></ProfileInput>
-          <ProfileInput name={'특이사항'}></ProfileInput>
-        </View>
-        <View></View>
-        <Image source={require('../settings.png')}></Image>
-        <NormalButton text={'수정하기'} onPress={onPress} />
       </ScrollView>
     </SafeAreaView>
   );

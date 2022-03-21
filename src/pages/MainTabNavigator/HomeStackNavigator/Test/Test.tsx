@@ -9,8 +9,6 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 export default function Test() {
   return (
     <SafeAreaView>
-      <NormalButton text={'다음으로'}></NormalButton>
-      <Relativebutton name={'용환'} relative={'you'}></Relativebutton>
       <Normalinput></Normalinput>
       <QuestionBox payload="내 자식이 한 일 중에 가장 기뻤던 일은?" />
     </SafeAreaView>
