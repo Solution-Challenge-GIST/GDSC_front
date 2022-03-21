@@ -19,7 +19,7 @@ export default function Signup() {
     setHasName(!hasName);
   };
   const onMain = () => {
-    console.log(name, age);
+    navigation.replace('MainTabNavigator');
   };
   const onPress = () => {
     console.log('음성이 나옵니다.');

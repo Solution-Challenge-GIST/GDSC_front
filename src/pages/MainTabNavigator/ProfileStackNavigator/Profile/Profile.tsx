@@ -4,6 +4,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import ProfileInput from '../../../../components/input/ProfileInput';
 import { ScrollView, TouchableOpacity } from 'react-native-gesture-handler';
 import { profileStyles } from './style';
+import { getDisplayHeight } from '../../../../utility';
 
 export default function Profile() {
   const onPress = () => {
@@ -12,7 +13,7 @@ export default function Profile() {
   return (
     <SafeAreaView>
       <ScrollView contentContainerStyle={{ flexGrow: 1 }} bounces={true}>
-        <View style={{ flex: 1 }}>
+        <View style={{ height: getDisplayHeight(1350) }}>
           <View style={profileStyles.imageComponent}>
             <Text style={profileStyles.info}>내 정보</Text>
             <View style={profileStyles.align}>
