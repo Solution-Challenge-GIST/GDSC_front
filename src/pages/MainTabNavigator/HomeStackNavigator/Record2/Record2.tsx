@@ -73,22 +73,16 @@ export default function Record2() {
         <View
           style={{
             flexDirection: 'row',
-            justifyContent: 'space-between',
+            justifyContent: 'center',
             width: '100%',
           }}
         >
           {!hasRecordFile && !isRecoding && (
-            <RadioButton type="unrecord" onPress={toggleRecoding} />
+            <RadioButton type="record" onPress={toggleRecoding} />
           )}
           {!hasRecordFile && isRecoding && (
-            <RadioButton type="recoding" onPress={toggleRecoding} />
+            <RadioButton type="stop" onPress={toggleRecoding} />
           )}
-          <RadioButton type="pause" onPress={() => console.log('pause')} />
-          <RadioButton
-            type="play"
-            onPress={() => console.log('녹음된 메세지 재생됨')}
-          />
-          <RadioButton type="stop" onPress={() => console.log('stop')} />
         </View>
         {hasRecordFile && !isRecoding && (
           <View
