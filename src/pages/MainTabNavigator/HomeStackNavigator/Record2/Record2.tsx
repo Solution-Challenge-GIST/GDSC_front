@@ -11,7 +11,16 @@ import { getDisplayHeight, getDisplayWidth } from '../../../../utility';
 import RadioButton from './radioButton/RadioButton';
 import NormalButton from '../../../../components/button/NormalButton';
 
-export default function Record2() {
+export default function Record2(props) {
+  //props.route.params.person
+  console.log(props.route.params);
+  //아래 결과
+  // Object {
+  //   "person": Object {
+  //     "name": "배정윤",
+  //     "relative": "딸",
+  //   },
+  // }
   const [isRecoding, setIsRecoding] = useState(false);
   const [hasRecordFile, sethasRecordFile] = useState(false);
 
