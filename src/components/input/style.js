@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { mediumFontWeight, mediumFontSize } from '../../style/share';
+import { mediumFontWeight, seniorMediumFontSize } from '../../style/share';
 import { getDisplayHeight, getDisplayWidth } from '../../utility';
 import { baseColor } from '../../style/share';
 export const styles = StyleSheet.create({
@@ -7,7 +7,7 @@ export const styles = StyleSheet.create({
     width: getDisplayWidth(376),
     height: getDisplayHeight(81),
     fontWeight: mediumFontWeight,
-    fontSize: mediumFontSize,
+    fontSize: seniorMediumFontSize,
     borderColor: '#C4C4C4',
     borderWidth: 2,
     borderRadius: 11,
@@ -17,13 +17,13 @@ export const styles = StyleSheet.create({
     width: getDisplayWidth(401),
     height: getDisplayHeight(69),
     fontWeight: mediumFontWeight,
-    fontSize: mediumFontSize,
+    fontSize: seniorMediumFontSize,
     borderColor: '#C4C4C4',
     borderRadius: 27,
     backgroundColor: baseColor,
   },
   ProfileName: {
     fontWeight: mediumFontWeight,
-    fontSize: mediumFontSize,
+    fontSize: seniorMediumFontSize,
   },
 });
