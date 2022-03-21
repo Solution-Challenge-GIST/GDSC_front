@@ -1,11 +1,14 @@
 import { StyleSheet } from 'react-native';
-import { mediumFontSize, mediumFontWeight } from '../../../../style/share';
+import {
+  seniorMediumFontSize,
+  mediumFontWeight,
+} from '../../../../style/share';
 import { getDisplayHeight, getDisplayWidth } from '../../../../utility';
 
 export const record2Styles = StyleSheet.create({
   font: {
     fontWeight: mediumFontWeight,
-    fontSize: mediumFontSize - 1,
+    fontSize: seniorMediumFontSize - 1,
   },
   radioImage: {
     width: getDisplayWidth(168),

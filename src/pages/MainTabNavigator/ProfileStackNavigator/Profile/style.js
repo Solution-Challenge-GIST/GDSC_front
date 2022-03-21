@@ -1,10 +1,13 @@
 import { StyleSheet } from 'react-native';
-import { mediumFontSize, mediumFontWeight } from '../../../../style/share';
+import {
+  seniorMediumFontSize,
+  mediumFontWeight,
+} from '../../../../style/share';
 import { getDisplayHeight, getDisplayWidth } from '../../../../utility';
 
 const Textform = {
   fontWeight: mediumFontWeight,
-  fontSize: mediumFontSize,
+  fontSize: seniorMediumFontSize,
 };
 export const styles = StyleSheet.create({
   imageComponent: {

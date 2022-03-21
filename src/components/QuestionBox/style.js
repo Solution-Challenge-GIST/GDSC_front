@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 import {
-  mediumFontSize,
+  seniorMediumFontSize,
   shadow,
   boldFontWeight,
   bgColor,
@@ -22,6 +22,6 @@ export const questionBoxStyles = StyleSheet.create({
   font: {
     width: getDisplayWidth(280),
     fontWeight: boldFontWeight,
-    fontSize: mediumFontSize,
+    fontSize: seniorMediumFontSize,
   },
 });
