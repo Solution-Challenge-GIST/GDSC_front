@@ -10,7 +10,7 @@ export const semiBoldFontWeight = '600';
 export const boldFontWeight = '700';
 
 // fontSize
-export const seniorMediumFontSize = 30;
+export const seniorMediumFontSize = 28;
 export const juniorMediumFontSize = 18;
 export const juniorSmallFontSize = 11;
 

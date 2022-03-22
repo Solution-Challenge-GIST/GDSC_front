@@ -3,7 +3,7 @@ import { seniorMediumFontSize, mediumFontWeight } from '../../style/share';
 import { getDisplayHeight, getDisplayWidth } from '../../utility';
 export const signUpstyles = StyleSheet.create({
   position: {
-    marginTop: getDisplayHeight(106),
+    marginTop: getDisplayHeight(126),
     marginLeft: getDisplayWidth(26),
     marginRight: getDisplayWidth(26),
   },
@@ -18,7 +18,7 @@ export const signUpstyles = StyleSheet.create({
   },
 
   button: {
-    marginTop: getDisplayHeight(350),
+    marginTop: getDisplayHeight(438),
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',

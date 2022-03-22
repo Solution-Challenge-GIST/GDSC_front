@@ -38,7 +38,7 @@ export default function Record2(props) {
   };
 
   return (
-    <SafeAreaView>
+    <View>
       <View
         style={{
           alignItems: 'center',
@@ -103,6 +103,6 @@ export default function Record2(props) {
           </View>
         )}
       </View>
-    </SafeAreaView>
+    </View>
   );
 }

@@ -1,10 +1,10 @@
 import { View, Text } from 'react-native';
 import React from 'react';
 import Relativebutton from '../../../../components/button/RelativeButton';
-import { SafeAreaView } from 'react-native-safe-area-context';
 import { record1Styles } from './style';
 import { useNavigation } from '@react-navigation/native';
 import { ScrollView } from 'react-native-gesture-handler';
+import { getDisplayHeight } from '../../../../utility';
 
 const data = {
   relationship: [
@@ -37,11 +37,8 @@ export default function Test() {
   };
 
   return (
-    <SafeAreaView>
-      <ScrollView
-        contentContainerStyle={{ flexGrow: 1 }}
-        style={{ marginBottom: 0 }}
-      >
+    <View style={{ flex: 1 }}>
+      <ScrollView bounces={true} style={{ marginBottom: 92 }}>
         <View style={record1Styles.position}>
           <Text style={record1Styles.text}>누구에게 음성을 보낼까요?</Text>
           {data.relationship.map(({ name, relative }) => {
@@ -57,6 +54,6 @@ export default function Test() {
           })}
         </View>
       </ScrollView>
-    </SafeAreaView>
+    </View>
   );
 }

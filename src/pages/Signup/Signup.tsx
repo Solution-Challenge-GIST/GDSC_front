@@ -32,11 +32,15 @@ export default function Signup() {
             <TouchableOpacity onPress={onPress}>
               <Image
                 style={signUpstyles.image}
-                source={require('./voice.png')}
+                source={require('./SignupImages/voice.png')}
               />
             </TouchableOpacity>
             <Text style={signUpstyles.MainText}>당신의 이름은 무엇인가요?</Text>
-            <Normalinput onChangeText={setName} value={name} />
+            <Normalinput
+              placeholder={'예) 홍길동'}
+              onChangeText={setName}
+              value={name}
+            />
             <View style={signUpstyles.button}>
               <NormalButton text={'다음으로'} onPress={onName} />
             </View>
@@ -49,11 +53,15 @@ export default function Signup() {
             <TouchableOpacity onPress={onPress}>
               <Image
                 style={signUpstyles.image}
-                source={require('./voice.png')}
+                source={require('./SignupImages/voice.png')}
               />
             </TouchableOpacity>
             <Text style={signUpstyles.MainText}>나이가 어떻게 되시나요?</Text>
-            <Normalinput onChangeText={setAge} value={age} />
+            <Normalinput
+              placeholder={'예) 60'}
+              onChangeText={setAge}
+              value={age}
+            />
             <View style={signUpstyles.button}>
               <NormalButton text={'다음으로'} onPress={onName} />
             </View>
@@ -76,11 +84,11 @@ export default function Signup() {
         <View style={signUpstyles.finalView}>
           <Image
             style={signUpstyles.heartImage}
-            source={require('./heart.png')}
+            source={require('./SignupImages/heart.png')}
           />
           <Image
             style={signUpstyles.radioImage}
-            source={require('./radio.png')}
+            source={require('./SignupImages/radio.png')}
           />
           <View style={signUpstyles.finalTextView}>
             <Text style={signUpstyles.finalText}>환영합니다!</Text>

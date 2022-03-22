@@ -3,17 +3,17 @@ import { useState } from 'react';
 import { styles } from './style';
 interface inputType {
   name: string;
+  value: string;
+  onChangeText: Function;
 }
 export default function ProfileInput(props: inputType) {
-  const [text, setText] = useState('');
-
   return (
     <View>
       <Text style={styles.ProfileName}>{props.name}</Text>
       <TextInput
         style={styles.ProfileInput}
-        onChangeText={setText}
-        value={text}
+        onChangeText={props.onChangeText}
+        value={props.value}
       />
     </View>
   );
