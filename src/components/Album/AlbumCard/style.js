@@ -8,8 +8,8 @@ import {
   mediumFontWeight,
   seniorMediumFontSize,
   shadow,
-} from '../../style/share';
-import { getDisplayHeight, getDisplayWidth } from '../../utility';
+} from '../../../style/share';
+import { getDisplayHeight, getDisplayWidth } from '../../../utility';
 
 export const AlbumCardStyles = StyleSheet.create({
   container: {

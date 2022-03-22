@@ -1,8 +1,8 @@
 import { View, Text, Image, TouchableOpacity } from 'react-native';
 import React from 'react';
-import { getDisplayWidth } from '../../utility';
+import { AlbumCardInfo } from '../../../type';
 import { AlbumCardStyles } from './style';
-import { AlbumCardInfo } from '../../type';
+import { getDisplayWidth } from '../../../utility';
 
 interface AlbumCardInfoWithUserType extends AlbumCardInfo {
   type: 'junior' | 'senior';
@@ -37,12 +37,12 @@ export default function AlbumCard(props: AlbumCardInfoWithUserType) {
         {isReplied ? (
           <Image
             style={AlbumCardStyles.replyStatus}
-            source={require('./images/isReplied.png')}
+            source={require('../images/isReplied.png')}
           />
         ) : (
           <Image
             style={AlbumCardStyles.replyStatus}
-            source={require('./images/needReply.png')}
+            source={require('../images/needReply.png')}
           />
         )}
       </View>
