@@ -36,7 +36,11 @@ export default function Signup() {
               />
             </TouchableOpacity>
             <Text style={signUpstyles.MainText}>당신의 이름은 무엇인가요?</Text>
-            <Normalinput onChangeText={setName} value={name} />
+            <Normalinput
+              placeholder={'예) 홍길동'}
+              onChangeText={setName}
+              value={name}
+            />
             <View style={signUpstyles.button}>
               <NormalButton text={'다음으로'} onPress={onName} />
             </View>
@@ -53,7 +57,11 @@ export default function Signup() {
               />
             </TouchableOpacity>
             <Text style={signUpstyles.MainText}>나이가 어떻게 되시나요?</Text>
-            <Normalinput onChangeText={setAge} value={age} />
+            <Normalinput
+              placeholder={'예) 60'}
+              onChangeText={setAge}
+              value={age}
+            />
             <View style={signUpstyles.button}>
               <NormalButton text={'다음으로'} onPress={onName} />
             </View>
