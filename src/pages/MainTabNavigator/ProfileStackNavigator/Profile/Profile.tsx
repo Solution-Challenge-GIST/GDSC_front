@@ -4,7 +4,6 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import ProfileInput from '../../../../components/input/ProfileInput';
 import { ScrollView, TouchableOpacity } from 'react-native-gesture-handler';
 import { profileStyles } from './style';
-
 import { getDisplayHeight } from '../../../../utility';
 import NormalText from '../../../../components/CustomText/NormalText';
 

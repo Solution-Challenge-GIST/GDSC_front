@@ -7,6 +7,7 @@ import { getDisplayWidth } from '../../../utility';
 interface AlbumCardInfoWithUserType extends AlbumCardInfo {
   type: 'junior' | 'senior';
 }
+// 장고는 대문자로 JUNIOR, SENIOR 이렇게 들어온대요
 
 export default function AlbumCard(props: AlbumCardInfoWithUserType) {
   const { id, username, uri, title, memo, isReplied, type } = props;

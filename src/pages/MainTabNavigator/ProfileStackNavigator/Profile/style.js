@@ -23,7 +23,7 @@ export const profileStyles = StyleSheet.create({
     marginTop: getDisplayHeight(18),
   },
   image: {
-    width: getDisplayWidth(161),
+    width: getDisplayWidth(175),
     height: getDisplayHeight(175),
     backgroundColor: 'gray',
     borderRadius: 40,
