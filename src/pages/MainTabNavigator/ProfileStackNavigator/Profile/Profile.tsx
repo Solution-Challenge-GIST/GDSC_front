@@ -82,7 +82,7 @@ export default function Profile() {
                 >
                   <Image
                     style={profileStyles.fixImage}
-                    source={require('../settings.png')}
+                    source={require('../profileImages/settings.png')}
                   />
                   <Text style={profileStyles.info}>저장하기</Text>
                 </TouchableOpacity>
@@ -105,7 +105,7 @@ export default function Profile() {
                 >
                   <Image
                     style={profileStyles.fixImage}
-                    source={require('../settings.png')}
+                    source={require('../profileImages/settings.png')}
                   />
                   <Text style={profileStyles.info}>수정하기</Text>
                 </TouchableOpacity>
