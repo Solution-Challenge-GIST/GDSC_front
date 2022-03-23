@@ -1,15 +1,17 @@
 import { StyleSheet } from 'react-native';
 import {
   bgColor,
+  boldFontWeight,
   boxBorderRadious,
   juniorMediumFontSize,
   juniorSmallFontSize,
   mediumFontWeight,
+  seniorMediumFontSize,
   shadow,
-} from '../../style/share';
-import { getDisplayHeight, getDisplayWidth } from '../../utility';
+} from '../../../style/share';
+import { getDisplayHeight, getDisplayWidth } from '../../../utility';
 
-export const AlbumJuniorCardStyles = StyleSheet.create({
+export const AlbumCardStyles = StyleSheet.create({
   container: {
     width: getDisplayWidth(182),
     height: getDisplayHeight(310),
@@ -39,6 +41,12 @@ export const AlbumJuniorCardStyles = StyleSheet.create({
     fontSize: juniorSmallFontSize,
   },
 
+  seniorUserInfo: {
+    fontWeight: boldFontWeight,
+    fontSize: seniorMediumFontSize,
+    left: getDisplayWidth(5),
+    top: getDisplayHeight(4),
+  },
   replyStatus: {
     position: 'absolute',
     top: getDisplayWidth(-10),

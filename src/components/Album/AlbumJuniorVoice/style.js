@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
-import { bgColor, boxBorderRadious, shadow } from '../../style/share';
-import { getDisplayHeight, getDisplayWidth } from '../../utility';
+import { bgColor, boxBorderRadious, shadow } from '../../../style/share';
+import { getDisplayHeight, getDisplayWidth } from '../../../utility';
 
 export const AlbumJuniorVoiceStyles = StyleSheet.create({
   container: {
