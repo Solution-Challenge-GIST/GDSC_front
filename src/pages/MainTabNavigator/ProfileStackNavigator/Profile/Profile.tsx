@@ -34,7 +34,7 @@ export default function Profile() {
       <ScrollView contentContainerStyle={{ flexGrow: 1 }} bounces={true}>
         <View style={{ height: getDisplayHeight(1350) }}>
           <View style={profileStyles.imageComponent}>
-            <Text style={profileStyles.info}>내 정보</Text>
+            <Text style={profileStyles.info}>My Profile</Text>
             <View style={profileStyles.align}>
               <View style={profileStyles.image}></View>
               <View style={profileStyles.profileName}>
@@ -49,27 +49,27 @@ export default function Profile() {
             <>
               <View style={profileStyles.infoComponent}>
                 <ProfileInput
-                  name={'나이'}
+                  name={'Age'}
                   value={age}
                   onChangeText={setAge}
                 ></ProfileInput>
                 <ProfileInput
-                  name={'사는 곳'}
+                  name={'Location'}
                   value={location}
                   onChangeText={setLocation}
                 ></ProfileInput>
                 <ProfileInput
-                  name={'지병'}
+                  name={'Chronic Illness'}
                   value={sick}
                   onChangeText={setSick}
                 ></ProfileInput>
                 <ProfileInput
-                  name={'비상 연락망'}
+                  name={'Emergency Call'}
                   value={tel}
                   onChangeText={setTel}
                 ></ProfileInput>
                 <ProfileInput
-                  name={'특이사항'}
+                  name={'Remarks'}
                   value={significant}
                   onChangeText={setSignificant}
                 ></ProfileInput>
@@ -83,7 +83,7 @@ export default function Profile() {
                     style={profileStyles.fixImage}
                     source={require('../profileImages/settings.png')}
                   />
-                  <Text style={profileStyles.info}>저장하기</Text>
+                  <Text style={profileStyles.info}>Save</Text>
                 </TouchableOpacity>
               </View>
             </>
@@ -91,11 +91,11 @@ export default function Profile() {
           {fix && (
             <>
               <View style={profileStyles.infoComponent}>
-                <NormalText name={'나이'} value={age} />
-                <NormalText name={'사는 곳'} value={location} />
-                <NormalText name={'지병'} value={sick} />
-                <NormalText name={'비상 연락망'} value={tel} />
-                <NormalText name={'특이사항'} value={significant} />
+                <NormalText name={'Age'} value={age} />
+                <NormalText name={'Location'} value={location} />
+                <NormalText name={'Chronic Illness'} value={sick} />
+                <NormalText name={'Emergency Call'} value={tel} />
+                <NormalText name={'Remarks'} value={significant} />
               </View>
               <View style={{ alignItems: 'center' }}>
                 <TouchableOpacity
@@ -106,7 +106,7 @@ export default function Profile() {
                     style={profileStyles.fixImage}
                     source={require('../profileImages/settings.png')}
                   />
-                  <Text style={profileStyles.info}>수정하기</Text>
+                  <Text style={profileStyles.info}>Edit</Text>
                 </TouchableOpacity>
               </View>
             </>

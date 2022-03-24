@@ -28,10 +28,8 @@ export default function AlbumCard(props: AlbumCardInfoWithUserType) {
             </>
           ) : (
             <>
-              <Text style={AlbumCardStyles.seniorUserInfo}>
-                {`${username}`}님이
-              </Text>
-              <Text style={AlbumCardStyles.seniorUserInfo}>보냈습니다.</Text>
+              <Text style={AlbumCardStyles.seniorUserInfo}>Sent by</Text>
+              <Text style={AlbumCardStyles.seniorUserInfo}>{username}</Text>
             </>
           )}
         </View>

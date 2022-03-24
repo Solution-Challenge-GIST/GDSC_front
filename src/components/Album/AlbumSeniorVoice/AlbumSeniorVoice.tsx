@@ -12,7 +12,7 @@ export default function AlbumSeniorVoice(props: Props) {
   const { id, username, isReplied } = props;
 
   const goDetail = () => {
-    console.log(`postId ${id}로 이동함`);
+    console.log(`postId ${id} move`);
   };
 
   return (
@@ -24,8 +24,8 @@ export default function AlbumSeniorVoice(props: Props) {
             source={require('./images/speaker.png')}
           />
           <View style={{ marginLeft: getDisplayWidth(16) }}>
-            <Text style={AlbumSeniorVoiceStyles.font}>{`${username}님이`}</Text>
-            <Text style={AlbumSeniorVoiceStyles.font}>보냈습니다.</Text>
+            <Text style={AlbumSeniorVoiceStyles.font}>Sent from</Text>
+            <Text style={AlbumSeniorVoiceStyles.font}>{username}</Text>
           </View>
         </View>
         {isReplied ? (
