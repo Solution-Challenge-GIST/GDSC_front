@@ -71,7 +71,7 @@ export default function JuniorAlbum() {
         }}
       >
         <View style={albumStyles.title}>
-          <Text style={albumStyles.titleText}>기록 앨범</Text>
+          <Text style={albumStyles.titleText}>Album</Text>
         </View>
         <View style={albumStyles.dateLineSenior}>
           <DateLine type="senior" {...weekData} />

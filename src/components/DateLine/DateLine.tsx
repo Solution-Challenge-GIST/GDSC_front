@@ -18,7 +18,7 @@ export default function DateLine(props: DateWithUserType) {
       <View style={{ flexDirection: 'row', alignItems: 'center' }}>
         <SeperateBar />
         <Text style={DateLineStyles.juniorText}>
-          {`${year}년 ${month}월 ${day}일 ${weekday}`}
+          {`${year}-${month}- ${day}-${weekday}`}
         </Text>
         <SeperateBar />
       </View>
@@ -29,7 +29,7 @@ export default function DateLine(props: DateWithUserType) {
       <View style={{ flexDirection: 'row', alignItems: 'center' }}>
         {/* <SeperateBar /> */}
         <Text style={DateLineStyles.seniorText}>
-          {`${year}년 ${month}월 ${day}일 ${weekday}`}
+          {`${year}-${month}-${day}-${weekday}`}
         </Text>
         {/* <SeperateBar /> */}
       </View>

@@ -22,7 +22,7 @@ export default function Signup() {
     navigation.replace('MainTabNavigator');
   };
   const onPress = () => {
-    console.log('음성이 나옵니다.');
+    console.log('voice play.');
   };
   return (
     <View>
@@ -35,14 +35,14 @@ export default function Signup() {
                 source={require('./SignupImages/voice.png')}
               />
             </TouchableOpacity>
-            <Text style={signUpstyles.MainText}>당신의 이름은 무엇인가요?</Text>
+            <Text style={signUpstyles.MainText}>What is your name?</Text>
             <Normalinput
-              placeholder={'예) 홍길동'}
+              placeholder={'ex) Jane/Jone Doe'}
               onChangeText={setName}
               value={name}
             />
             <View style={signUpstyles.button}>
-              <NormalButton text={'다음으로'} onPress={onName} />
+              <NormalButton text={'Next'} onPress={onName} />
             </View>
           </View>
         </>
@@ -56,14 +56,14 @@ export default function Signup() {
                 source={require('./SignupImages/voice.png')}
               />
             </TouchableOpacity>
-            <Text style={signUpstyles.MainText}>나이가 어떻게 되시나요?</Text>
+            <Text style={signUpstyles.MainText}>What is your age?</Text>
             <Normalinput
-              placeholder={'예) 60'}
+              placeholder={'ex) 60'}
               onChangeText={setAge}
               value={age}
             />
             <View style={signUpstyles.button}>
-              <NormalButton text={'다음으로'} onPress={onName} />
+              <NormalButton text={'Next'} onPress={onName} />
             </View>
           </View>
         </>
@@ -74,9 +74,9 @@ export default function Signup() {
             <TouchableOpacity
               onPress={() => Linking.openURL('https://younghwan.tistory.com/')}
             >
-              <Text style={signUpstyles.MainText}>개인정보 동의서보기</Text>
+              <Text style={signUpstyles.MainText}>View Privacy Agreement</Text>
             </TouchableOpacity>
-            <NormalButton text={'동의 어 보감'} onPress={onName} />
+            <NormalButton text={'Agree'} onPress={onName} />
           </View>
         </>
       )}
@@ -91,14 +91,14 @@ export default function Signup() {
             source={require('./SignupImages/radio.png')}
           />
           <View style={signUpstyles.finalTextView}>
-            <Text style={signUpstyles.finalText}>환영합니다!</Text>
+            <Text style={signUpstyles.finalText}>Welcome!</Text>
           </View>
           <View style={signUpstyles.finalTextView}>
-            <Text>가족과의 추억을</Text>
-            <Text>음성으로 기록해보세요!</Text>
+            <Text>Record your family</Text>
+            <Text>with your voice!</Text>
           </View>
           <View style={signUpstyles.finalbutton}>
-            <NormalButton text={'완료'} onPress={onMain} />
+            <NormalButton text={'Complete'} onPress={onMain} />
           </View>
         </View>
       )}
