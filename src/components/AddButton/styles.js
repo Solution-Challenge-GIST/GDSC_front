@@ -9,7 +9,7 @@ import { getDisplayHeight, getDisplayWidth } from '../../utility';
 
 export const addImageButtonStyles = StyleSheet.create({
   container: {
-    width: getDisplayWidth(360),
+    width: getDisplayWidth(390),
     height: getDisplayHeight(170),
     backgroundColor: bgColor,
     borderRadius: boxBorderRadious,
