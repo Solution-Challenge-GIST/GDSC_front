@@ -52,11 +52,13 @@ const voiceData = [
     isReplied: true,
     id: 1,
     username: '김민국',
+    question: '내 자식이 한 일 중에 가장 기뻤던 일은?',
   },
   {
     isReplied: false,
     id: 2,
     username: '조용환',
+    question: '내 자식이 한 일 중에 가장 기뻤던 일은?',
   },
 ];
 export default function JuniorAlbum() {
@@ -94,7 +96,11 @@ export default function JuniorAlbum() {
         {voiceData.map(item => {
           return (
             <View style={albumStyles.voice}>
-              <AlbumJuniorVoice id={item.id} />
+              <AlbumJuniorVoice
+                id={item.id}
+                isReplied={item.isReplied}
+                question={item.question}
+              />
             </View>
           );
         })}

@@ -1,5 +1,11 @@
 import { StyleSheet } from 'react-native';
-import { bgColor, boxBorderRadious, shadow } from '../../../style/share';
+import {
+  bgColor,
+  boldFontWeight,
+  boxBorderRadious,
+  seniorMediumFontSize,
+  shadow,
+} from '../../../style/share';
 import { getDisplayHeight, getDisplayWidth } from '../../../utility';
 
 export const AlbumJuniorVoiceStyles = StyleSheet.create({
@@ -8,6 +14,19 @@ export const AlbumJuniorVoiceStyles = StyleSheet.create({
     height: getDisplayHeight(135),
     backgroundColor: bgColor,
     borderRadius: boxBorderRadious,
+    justifyContent: 'center',
+    paddingHorizontal: getDisplayWidth(33),
     ...shadow,
+  },
+  font: {
+    fontSize: seniorMediumFontSize,
+    fontWeight: boldFontWeight,
+  },
+  replyStatus: {
+    position: 'absolute',
+    top: getDisplayWidth(-10),
+    left: getDisplayWidth(-10),
+    width: getDisplayWidth(28),
+    height: getDisplayWidth(28),
   },
 });
