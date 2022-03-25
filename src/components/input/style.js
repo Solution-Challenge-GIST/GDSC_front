@@ -18,9 +18,9 @@ export const styles = StyleSheet.create({
     height: getDisplayHeight(69),
     fontWeight: mediumFontWeight,
     fontSize: seniorMediumFontSize,
-    borderColor: '#C4C4C4',
+    borderColor: '#F24E1E',
+    borderWidth: 2,
     borderRadius: 27,
-    backgroundColor: baseColor,
   },
   ProfileName: {
     marginBottom: 7,
