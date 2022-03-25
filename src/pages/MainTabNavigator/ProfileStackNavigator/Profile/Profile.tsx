@@ -41,7 +41,7 @@ export default function Profile() {
                 <Text style={profileStyles.profileName_big}>
                   {data.user.name}
                 </Text>
-                <Text style={profileStyles.profileName_small}>님</Text>
+                {/* <Text style={profileStyles.profileName_small}>님</Text> */}
               </View>
             </View>
           </View>
