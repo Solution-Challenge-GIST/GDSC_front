@@ -33,7 +33,7 @@ interface person {
   relationship: string;
   junior_id: number;
 }
-export default function Test() {
+export default function Record1() {
   const navigation = useNavigation();
   const onChange = (props: person) => {
     navigation.navigate('Record2', { person: props });
