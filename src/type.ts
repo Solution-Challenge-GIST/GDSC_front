@@ -13,3 +13,7 @@ export interface AlbumCardInfo {
   memo: string;
   isReplied: boolean;
 }
+
+export interface AlbumCardInfoWithUserType extends AlbumCardInfo {
+  type: 'junior' | 'senior';
+}
