@@ -46,6 +46,7 @@ export default function Record1() {
             return (
               <View style={{ marginTop: 30 }}>
                 <Relativebutton
+                  key={item.junior_id}
                   name={item.name}
                   relative={item.relationship}
                   onPress={() => onChange(item)}

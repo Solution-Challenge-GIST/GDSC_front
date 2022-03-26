@@ -18,4 +18,13 @@ export const HomeStyles = StyleSheet.create({
     marginLeft: getDisplayWidth(36),
     marginBottom: getDisplayHeight(20),
   },
+  AudioContainer: {
+    width: getDisplayWidth(116),
+    height: getDisplayHeight(116),
+  },
+  AudioFix: {
+    position: 'absolute',
+    bottom: 100,
+    left: getDisplayWidth(300),
+  },
 });
