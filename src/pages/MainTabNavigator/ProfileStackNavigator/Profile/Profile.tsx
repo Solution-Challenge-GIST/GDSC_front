@@ -41,7 +41,7 @@ export default function Profile() {
                 <Text style={profileStyles.profileName_big}>
                   {data.user.name}
                 </Text>
-                <Text style={profileStyles.profileName_small}>님</Text>
+                {/* <Text style={profileStyles.profileName_small}>님</Text> */}
               </View>
             </View>
           </View>
@@ -83,7 +83,7 @@ export default function Profile() {
                     style={profileStyles.fixImage}
                     source={require('../profileImages/settings.png')}
                   />
-                  <Text style={profileStyles.info}>Save</Text>
+                  <Text style={profileStyles.info}> Save</Text>
                 </TouchableOpacity>
               </View>
             </>
@@ -106,7 +106,7 @@ export default function Profile() {
                     style={profileStyles.fixImage}
                     source={require('../profileImages/settings.png')}
                   />
-                  <Text style={profileStyles.info}>Edit</Text>
+                  <Text style={profileStyles.info}> Edit</Text>
                 </TouchableOpacity>
               </View>
             </>
