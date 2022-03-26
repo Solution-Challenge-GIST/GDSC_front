@@ -28,7 +28,6 @@ export default function Calendar(props: CalendarDate) {
         </View>
         <View style={calenderStyles.smallDate}>
           <Text style={calenderStyles.smallDateFont}>{props.date}</Text>
-
         </View>
       </View>
     );

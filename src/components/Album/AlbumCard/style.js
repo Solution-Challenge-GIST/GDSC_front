@@ -6,12 +6,21 @@ import {
   juniorMediumFontSize,
   juniorSmallFontSize,
   mediumFontWeight,
+  seniorBigFontSize,
   seniorMediumFontSize,
   shadow,
 } from '../../../style/share';
 import { getDisplayHeight, getDisplayWidth } from '../../../utility';
 
 export const AlbumCardStyles = StyleSheet.create({
+  Maincontainer: {
+    width: getDisplayWidth(360),
+    height: getDisplayHeight(518),
+    backgroundColor: bgColor,
+    borderRadius: boxBorderRadious,
+    ...shadow,
+  },
+
   container: {
     width: getDisplayWidth(182),
     height: getDisplayHeight(310),
@@ -19,7 +28,12 @@ export const AlbumCardStyles = StyleSheet.create({
     borderRadius: boxBorderRadious,
     ...shadow,
   },
-
+  MainCardImage: {
+    width: getDisplayWidth(360),
+    height: getDisplayHeight(364),
+    borderRadius: getDisplayWidth(26),
+    resizeMode: 'cover',
+  },
   cardImage: {
     width: getDisplayWidth(182),
     height: getDisplayHeight(230),
@@ -53,5 +67,9 @@ export const AlbumCardStyles = StyleSheet.create({
     left: getDisplayWidth(-10),
     width: getDisplayWidth(28),
     height: getDisplayWidth(28),
+  },
+  MainUserInfo: {
+    fontWeight: boldFontWeight,
+    fontSize: seniorBigFontSize,
   },
 });

@@ -10,7 +10,7 @@ export interface AlbumCardInfo {
   username: string;
   uri: string;
   title: string;
-  memo: string;
+  memo?: string;
   isReplied: boolean;
 }
 
@@ -20,7 +20,7 @@ export interface CalendarDate {
   date: string;
   fontSize: 'big' | 'small';
 }
-
 export interface AlbumCardInfoWithUserType extends AlbumCardInfo {
   type: 'junior' | 'senior';
 }
+

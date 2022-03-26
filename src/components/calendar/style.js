@@ -5,8 +5,6 @@ const commonCalender = {
   ...shadow,
   borderRadius: 10,
   backgroundColor: bgColor,
-  alignItems: 'center',
-  justifyContent: 'center',
 };
 export const calenderStyles = StyleSheet.create({
   smallCalender: {
@@ -15,7 +13,8 @@ export const calenderStyles = StyleSheet.create({
     ...commonCalender,
   },
   smallMonth: {
-    width: getDisplayWidth(22),
+    alignItems: 'center',
+    width: '100%',
     height: getDisplayHeight(24),
   },
   smallMonthFont: {
@@ -23,7 +22,8 @@ export const calenderStyles = StyleSheet.create({
     fontSize: 17,
   },
   smallDay: {
-    width: getDisplayWidth(44),
+    alignItems: 'center',
+    width: '100%',
     height: getDisplayHeight(48),
   },
   smallDayFont: {
@@ -31,7 +31,8 @@ export const calenderStyles = StyleSheet.create({
     fontSize: 36,
   },
   smallDate: {
-    width: getDisplayWidth(40),
+    alignItems: 'center',
+    width: '100%',
     height: getDisplayHeight(18),
   },
   smallDateFont: {
@@ -45,24 +46,27 @@ export const calenderStyles = StyleSheet.create({
   },
   bigMonth: {
     marginTop: getDisplayHeight(5),
-    width: getDisplayWidth(27),
+    width: '100%',
     height: getDisplayHeight(28),
+    alignItems: 'center',
   },
   bigMonthFont: {
     fontSize: 20,
     fontWeight: mediumFontWeight,
   },
   bigDay: {
-    width: getDisplayWidth(54),
+    width: '100%',
     height: getDisplayHeight(56),
+    alignItems: 'center',
   },
   bigDayFont: {
     fontWeight: mediumFontWeight,
     fontSize: 46,
   },
   bigDate: {
-    width: getDisplayWidth(50),
+    width: '100%',
     height: getDisplayHeight(21),
+    alignItems: 'center',
   },
   bigDateFont: {
     fontWeight: mediumFontWeight,
