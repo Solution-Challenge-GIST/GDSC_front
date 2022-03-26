@@ -10,6 +10,13 @@ export interface AlbumCardInfo {
   username: string;
   uri: string;
   title: string;
-  memo: string;
+  memo?: string;
   isReplied: boolean;
+}
+
+export interface CalendarDate {
+  month: string;
+  day: string;
+  date: string;
+  fontSize: 'big' | 'small';
 }
