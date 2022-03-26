@@ -25,6 +25,9 @@ export const addImageButtonStyles = StyleSheet.create({
   font: {
     fontSize: seniorMediumFontSize,
   },
+  smallfont: {
+    fontSize: 25,
+  },
   image: {
     borderRadius: boxBorderRadious,
     width: '100%',
