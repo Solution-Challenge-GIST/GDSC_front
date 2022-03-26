@@ -1,10 +1,8 @@
-import { View, Text } from 'react-native';
+import { View, Text, ScrollView } from 'react-native';
 import React from 'react';
 import Relativebutton from '../../../../components/button/RelativeButton';
 import { record1Styles } from './style';
 import { useNavigation } from '@react-navigation/native';
-import { ScrollView } from 'react-native-gesture-handler';
-import { getDisplayHeight } from '../../../../utility';
 
 const data = [
   {

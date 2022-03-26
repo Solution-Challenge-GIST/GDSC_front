@@ -1,13 +1,8 @@
 import { View, Text, Image, TouchableOpacity } from 'react-native';
 import React from 'react';
-import { AlbumCardInfo } from '../../../type';
+import { AlbumCardInfo, AlbumCardInfoWithUserType } from '../../../type';
 import { AlbumCardStyles } from './style';
 import { getDisplayWidth } from '../../../utility';
-
-interface AlbumCardInfoWithUserType extends AlbumCardInfo {
-  type: 'junior' | 'senior';
-}
-// 장고는 대문자로 JUNIOR, SENIOR 이렇게 들어온대요
 
 export default function AlbumCard(props: AlbumCardInfoWithUserType) {
   const { id, username, uri, title, memo, isReplied, type } = props;

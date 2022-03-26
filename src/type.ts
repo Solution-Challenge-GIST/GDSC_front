@@ -20,3 +20,7 @@ export interface CalendarDate {
   date: string;
   fontSize: 'big' | 'small';
 }
+export interface AlbumCardInfoWithUserType extends AlbumCardInfo {
+  type: 'junior' | 'senior';
+}
+
