@@ -27,7 +27,8 @@ export default function Calendar(props: CalendarDate) {
           <Text style={calenderStyles.smallDayFont}>{props.day}</Text>
         </View>
         <View style={calenderStyles.smallDate}>
-          <Text style={calenderStyles.smalDatethFont}>{props.date}</Text>
+          <Text style={calenderStyles.smallDateFont}>{props.date}</Text>
+
         </View>
       </View>
     );

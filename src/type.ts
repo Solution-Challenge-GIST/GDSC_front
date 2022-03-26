@@ -14,6 +14,13 @@ export interface AlbumCardInfo {
   isReplied: boolean;
 }
 
+export interface CalendarDate {
+  month: string;
+  day: string;
+  date: string;
+  fontSize: 'big' | 'small';
+}
+
 export interface AlbumCardInfoWithUserType extends AlbumCardInfo {
   type: 'junior' | 'senior';
 }
