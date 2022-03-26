@@ -4,6 +4,11 @@ import { QueryClient, QueryClientProvider } from 'react-query';
 import Signup from './src/pages/Signup/Signup';
 import MainTabNavigator from './src/pages/MainTabNavigator/MainTabNavigator';
 import { createStackNavigator } from '@react-navigation/stack';
+import axios from 'axios';
+
+axios.defaults.headers.common[
+  'Authorization'
+] = `Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ5MTc1MDI3LCJpYXQiOjE2NDgzMTEwMjcsImp0aSI6IjM3NDY1YzBjZTBlNjQ3NmJhYWJkNjYyNmIyM2ZiNDc0IiwidXNlcl9pZCI6Nn0.PSOX0XNIbPzCAj1lfwjidgINJYG6eyl7-eRdZN08KqA`;
 
 const Stack = createStackNavigator();
 const queryClient = new QueryClient();
