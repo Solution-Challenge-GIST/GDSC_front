@@ -1,4 +1,4 @@
-import { View, Text, TouchableOpacity } from 'react-native';
+import { View, Text, TouchableOpacity, Image } from 'react-native';
 import React from 'react';
 import { questionBoxStyles } from './style';
 import { getDisplayHeight, getDisplayWidth } from '../../utility';
@@ -15,13 +15,10 @@ export default function QuestionBox(props: Props) {
           ...questionBoxStyles.container,
         }}
       >
-        <View
-          style={{
-            backgroundColor: 'gray',
-            width: getDisplayWidth(73),
-            height: getDisplayHeight(73),
-          }}
-        ></View>
+        <Image
+          style={{ width: getDisplayWidth(73), height: getDisplayHeight(73) }}
+          source={require('./QuestionBoxImage/Speaker.png')}
+        />
         <Text
           style={{
             marginLeft: getDisplayWidth(16),
