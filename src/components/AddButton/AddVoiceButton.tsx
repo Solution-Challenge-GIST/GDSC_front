@@ -15,6 +15,7 @@ export default function AddVoiceButton(props: Props) {
 
   async function startRecording() {
     try {
+      await Audio.requestPermissionsAsync();
       await Audio.setAudioModeAsync({
         playsInSilentModeIOS: true,
         allowsRecordingIOS: true,
