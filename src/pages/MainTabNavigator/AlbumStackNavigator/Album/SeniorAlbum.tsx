@@ -79,6 +79,7 @@ export default function SeniorAlbum() {
           return (
             <View style={albumStyles.card}>
               <AlbumCard
+                key={item.id}
                 id={item.id}
                 type={item.type}
                 username={item.username}
@@ -93,6 +94,7 @@ export default function SeniorAlbum() {
           return (
             <View style={albumStyles.voice}>
               <AlbumSeniorVoice
+                key={item.id}
                 isReplied={item.isReplied}
                 id={item.id}
                 username={item.username}

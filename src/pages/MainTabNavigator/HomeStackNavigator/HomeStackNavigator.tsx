@@ -2,7 +2,7 @@ import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import Home from './Home/Home';
 import Test from './Test/Test';
-import Record1 from './Record/Record1';
+import Record1 from './Record1/Record1';
 import Record2 from './Record2/Record2';
 import Memo from './Memo/Memo';
 import AddImage from './AddImage/AddImage';
