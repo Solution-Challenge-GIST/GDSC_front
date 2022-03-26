@@ -8,6 +8,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import DateLine from '../../../../components/DateLine/DateLine';
 import AddImageButton from '../../../../components/AddButton/AddImageButton';
 import AddVoiceButton from '../../../../components/AddButton/AddVoiceButton';
+import VoiceReply from '../../../../components/VoiceReply/VoiceReply';
 
 export default function Test() {
   const weekData = {
@@ -24,7 +25,7 @@ export default function Test() {
       <DateLine type="junior" {...weekData} />
       <DateLine type="senior" {...weekData} />
       <AddImageButton />
-      <AddVoiceButton />
+      <VoiceReply />
       {/* <AlbumJuniorCard
         id={10}
         uri="https://media.istockphoto.com/videos/family-sitting-on-sofa-at-home-eating-popcorn-and-watching-movie-video-id1153425623?b=1&k=6&m=1153425623&s=640x640&h=j79ksgz6Q_JFCyzPjG7VLGC8dARlbb3DLrVWCjQVvrc="
