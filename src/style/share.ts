@@ -2,7 +2,7 @@ import { getDisplayWidth } from '../utility';
 
 // colors
 export const baseColor = '#FFF7DA';
-export const bgColor = '#E5E5E5';
+export const bgColor = '#fff';
 
 // fontWeight
 export const mediumFontWeight = '400';
