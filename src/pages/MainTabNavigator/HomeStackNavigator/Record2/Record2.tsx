@@ -48,9 +48,7 @@ export default function Record2(props) {
       >
         {!isRecoding && !hasRecordFile && (
           <>
-            <Text style={record2Styles.font}>
-              버튼을 누르면 기록이 시작돼요.
-            </Text>
+            <Text style={record2Styles.font}>Click button to Record.</Text>
             <Image
               style={record2Styles.radioImage}
               source={require('./images/radio.png')}
@@ -59,9 +57,7 @@ export default function Record2(props) {
         )}
         {isRecoding && !hasRecordFile && (
           <>
-            <Text style={record2Styles.font}>
-              지금 열심히 기록되고 있어요...
-            </Text>
+            <Text style={record2Styles.font}>Now Recoding...</Text>
             <Image
               style={record2Styles.radioImageRecoding}
               source={require('./images/recodingRadio.png')}
@@ -71,7 +67,7 @@ export default function Record2(props) {
         {!isRecoding && hasRecordFile && (
           <>
             {/* <Text style={record2Styles.font}>기록이 멈췄어요!</Text> */}
-            <Text style={record2Styles.font}>기록되었어요! 저장할까요?</Text>
+            <Text style={record2Styles.font}>Recorded! Want save?</Text>
             <Image
               style={record2Styles.radioImageRecoding}
               source={require('./images/recordDoneRadio.png')}
@@ -83,13 +79,13 @@ export default function Record2(props) {
           {!hasRecordFile && !isRecoding && (
             <View style={{ alignItems: 'center' }}>
               <RadioButton type="record" onPress={toggleRecoding} />
-              <Text style={record2Styles.buttonText}>녹음 시작</Text>
+              <Text style={record2Styles.buttonText}>Start Recoding</Text>
             </View>
           )}
           {!hasRecordFile && isRecoding && (
             <View style={{ alignItems: 'center' }}>
               <RadioButton type="stop" onPress={toggleRecoding} />
-              <Text style={record2Styles.buttonText}>녹음 멈추기</Text>
+              <Text style={record2Styles.buttonText}>Stop Recoding</Text>
             </View>
           )}
         </View>
@@ -97,9 +93,9 @@ export default function Record2(props) {
           <View style={record2Styles.recordDoneButtonsContainer}>
             <NormalButton
               onPress={() => console.log('서버로 음성파일 보내는 함수 실행')}
-              text="저장하기"
+              text="Save"
             />
-            <NormalButton onPress={onReRecord} text="지우고 다시 녹음하기" />
+            <NormalButton onPress={onReRecord} text="Delete and re-recording" />
           </View>
         )}
       </View>
