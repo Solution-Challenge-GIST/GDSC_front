@@ -34,4 +34,7 @@ export const addImageButtonStyles = StyleSheet.create({
     height: '100%',
     resizeMode: 'cover',
   },
+  recordingBtn: {
+    alignItems: 'center',
+  },
 });

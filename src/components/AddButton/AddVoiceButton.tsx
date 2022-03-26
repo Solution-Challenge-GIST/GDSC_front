@@ -2,7 +2,6 @@ import { View, Text, TouchableOpacity, Image, Button } from 'react-native';
 import React, { useState } from 'react';
 import { addImageButtonStyles } from './styles';
 import { Audio } from 'expo-av';
-import NormalButton from '../button/NormalButton';
 
 interface Props {
   getRecordURI: Function;
@@ -47,7 +46,6 @@ export default function AddVoiceButton(props: Props) {
     try {
       await recording.stopAndUnloadAsync();
       getRecordURI(recording.getURI());
-      //   console.log(`Recorded URI: ${recording.getURI()}`);
     } catch (error) {
       // Do nothing -- we are already unloaded.
     }
@@ -63,68 +61,41 @@ export default function AddVoiceButton(props: Props) {
     setRecordingStatus(undefined);
   }
   return (
-    <View>
-      <TouchableOpacity onPress={startRecording}>
-        <Image
-          style={addImageButtonStyles.plus}
-          source={require('./images/record.png')}
-        />
-        <Text style={addImageButtonStyles.font}>Start Recording</Text>
-      </TouchableOpacity>
-      <TouchableOpacity onPress={stopRecording}>
-        <Image
-          style={addImageButtonStyles.plus}
-          source={require('./images/stop.png')}
-        />
-        <Text style={addImageButtonStyles.font}>Stop Recording</Text>
-      </TouchableOpacity>
-      <TouchableOpacity onPress={playRecord}>
-        <Text style={addImageButtonStyles.font}>Replay</Text>
-      </TouchableOpacity>
-      <TouchableOpacity onPress={reRecord}>
-        <Text style={addImageButtonStyles.font}>reRecord</Text>
-      </TouchableOpacity>
-      <View>
-        <Text style={{ fontSize: 15 }}>
-          Can record: {recordingStatus?.canRecord ? 'Yes' : 'No'}
-        </Text>
-        <Text>Is recording: {recordingStatus?.isRecording ? 'Yes' : 'No'}</Text>
-        <Text>
-          Is done recording: {recordingStatus?.isDoneRecording ? 'Yes' : 'No'}
-        </Text>
-        <Text>Recording time: {recordingStatus?.durationMillis}</Text>
-      </View>
+    <View style={addImageButtonStyles.container}>
+      {!recordingStatus?.isRecording && !recordingStatus?.isDoneRecording && (
+        <TouchableOpacity
+          style={addImageButtonStyles.recordingBtn}
+          onPress={startRecording}
+        >
+          <Image
+            style={addImageButtonStyles.plus}
+            source={require('./images/record.png')}
+          />
+          <Text style={addImageButtonStyles.font}>Start Recording</Text>
+        </TouchableOpacity>
+      )}
+      {recordingStatus?.isRecording && !recordingStatus?.isDoneRecording && (
+        <TouchableOpacity
+          style={addImageButtonStyles.recordingBtn}
+          onPress={stopRecording}
+        >
+          <Image
+            style={addImageButtonStyles.plus}
+            source={require('./images/stop.png')}
+          />
+          <Text style={addImageButtonStyles.font}>Stop Recording</Text>
+        </TouchableOpacity>
+      )}
+      {!recordingStatus?.isRecording && recordingStatus?.isDoneRecording && (
+        <>
+          <TouchableOpacity onPress={playRecord}>
+            <Text style={addImageButtonStyles.font}>Press to replay</Text>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={reRecord}>
+            <Text style={addImageButtonStyles.font}>Press to re-record</Text>
+          </TouchableOpacity>
+        </>
+      )}
     </View>
   );
 }
-//     <View style={addImageButtonStyles.container}>
-//       {recording && !recordingStatus ? (
-// <TouchableOpacity onPress={stopRecording}>
-//   <Image
-//     style={addImageButtonStyles.plus}
-//     source={require('./images/stop.png')}
-//   />
-//   <Text style={addImageButtonStyles.font}>Stop Recording</Text>
-// </TouchableOpacity>
-//       ) : (
-// <TouchableOpacity onPress={startRecording}>
-//   <Image
-//     style={addImageButtonStyles.plus}
-//     source={require('./images/record.png')}
-//   />
-//   <Text style={addImageButtonStyles.font}>Start Recording</Text>
-// </TouchableOpacity>
-//       )}
-//       {recordingStatus && (
-//         <>
-//           <TouchableOpacity onPress={playRecord}>
-//             <Text style={addImageButtonStyles.font}>Record Success!</Text>
-//             <Text style={addImageButtonStyles.smallfont}>
-//               Press to replay record
-//             </Text>
-//           </TouchableOpacity>
-//           <NormalButton text="Re-record" onPress={reRecord} />
-//         </>
-//       )}
-//     </View>
-//   );
