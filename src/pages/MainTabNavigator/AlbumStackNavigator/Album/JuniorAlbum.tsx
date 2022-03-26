@@ -82,6 +82,7 @@ export default function JuniorAlbum() {
           return (
             <View style={albumStyles.card}>
               <AlbumCard
+                key={item.id}
                 memo={item.memo}
                 id={item.id}
                 type={item.type}
@@ -97,6 +98,7 @@ export default function JuniorAlbum() {
           return (
             <View style={albumStyles.voice}>
               <AlbumJuniorVoice
+                key={item.id}
                 id={item.id}
                 isReplied={item.isReplied}
                 question={item.question}
