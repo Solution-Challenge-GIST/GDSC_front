@@ -7,7 +7,7 @@ import { profileStyles } from './style';
 import { getDisplayHeight } from '../../../../utility';
 import NormalText from '../../../../components/CustomText/NormalText';
 import { useME } from '../../../../hooks/accounts/useMe';
-import { useSeniorProfileUpdate } from '../../../../hooks/seniors/useSeniorProfileUpdate';
+import { useSeniorProfileUpdate } from '../../../../hooks/seniors/useSeniorProfileUpdateMutation';
 
 // const data = {
 //   user: {
