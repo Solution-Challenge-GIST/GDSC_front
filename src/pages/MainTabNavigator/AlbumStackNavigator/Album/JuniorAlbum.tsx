@@ -61,8 +61,8 @@ const voiceData = [
 ];
 export default function JuniorAlbum() {
   const { data, isLoading } = useGetJuniorAlbums();
-  const { data: my } = useME();
-  if (!isLoading) {
+  const { data: my, isLoading: MeLoading } = useME();
+  if (!isLoading && !MeLoading) {
     return (
       <View>
         <ScrollView
@@ -84,8 +84,8 @@ export default function JuniorAlbum() {
               <View style={albumStyles.card}>
                 <AlbumCard
                   key={item.album_id}
-                  memo={item.memo}
                   id={item.album_id}
+                  memo={item.memo.content}
                   type={my.role}
                   username={item.junior.name}
                   isReplied={item.is_replied}

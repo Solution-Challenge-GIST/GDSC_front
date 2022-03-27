@@ -22,7 +22,7 @@ export default function AlbumCard(props: AlbumCardInfoWithUserType) {
           {type === 'JUNIOR' ? (
             <>
               <Text style={AlbumCardStyles.cardTitle}>{title}</Text>
-              <Text style={AlbumCardStyles.cardMemo}>{memo}</Text>
+              {/* <Text style={AlbumCardStyles.cardMemo}>{memo}</Text> */}
             </>
           ) : (
             <>
