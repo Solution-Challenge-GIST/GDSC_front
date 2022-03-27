@@ -21,13 +21,13 @@ export interface CalendarDate {
   fontSize: 'big' | 'small';
 }
 export interface AlbumCardInfoWithUserType extends AlbumCardInfo {
-  type: 'junior' | 'senior';
+  type: 'JUNIOR' | 'SENIOR';
 }
 
 export interface SeniorProfileInfo {
   profile_img?: string;
   name?: string;
-  age: number;
+  age?: string;
   address?: string;
   illness?: string;
   phone_number?: string;

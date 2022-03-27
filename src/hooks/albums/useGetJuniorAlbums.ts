@@ -2,9 +2,9 @@ import axios from 'axios';
 import { useQuery } from 'react-query';
 import { GET_JUNIOR_ALBUMS } from '../../constants/urls';
 
-const getJuniorAlbums = () => {
-  const result = axios.get(GET_JUNIOR_ALBUMS, {
-    params: 20,
+const getJuniorAlbums = async () => {
+  const result = await axios.get(GET_JUNIOR_ALBUMS, {
+    params: { page: 1 },
   });
   return result.data;
 };
