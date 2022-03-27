@@ -5,6 +5,9 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import MainAlbumCard from '../../../../components/Album/AlbumCard/MainAlbumCard';
 import { HomeStyles } from './style';
 import { getDisplayHeight, getDisplayWidth } from '../../../../utility';
+import { useNavigation } from '@react-navigation/native';
+import { useME } from '../../../../hooks/useMe';
+
 
 const cardData = [
   {
@@ -31,6 +34,16 @@ const cardData = [
   },
 ];
 export default function Home() {
+  const navigation = useNavigation();
+  const { data, isLoading } = useME();
+  console.log(data);
+  const onPress = () => {
+    if (data.role === 'SENIOR') {
+      navigation.navigate('Record1');
+    } else {
+      navigation.navigate('AddImage');
+    }
+  };
   return (
     <ScrollView style={{ marginBottom: 92 }}>
       <View style={HomeStyles.MainContainer}>
