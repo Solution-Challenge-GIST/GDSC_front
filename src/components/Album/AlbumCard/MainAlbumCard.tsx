@@ -1,3 +1,4 @@
+import { useNavigation } from '@react-navigation/native';
 import { Image, Text, TouchableOpacity, View } from 'react-native';
 import { AlbumCardInfo } from '../../../type';
 import { getDisplayWidth } from '../../../utility';
@@ -9,9 +10,10 @@ interface MainAlbum extends AlbumCardInfo {
   date: string;
 }
 export default function MainAlbumCard(props: MainAlbum) {
+  const navigation = useNavigation();
   const { id, username, uri, isReplied, month, day, date } = props;
   const goDetail = () => {
-    console.log(`postid${id}로 이동`);
+    navigation.navigate('Detail', { albumId: id });
   };
 
   return (

@@ -6,6 +6,7 @@ import Record1 from './Record1/Record1';
 import Record2 from './Record2/Record2';
 import Memo from './Memo/Memo';
 import AddImage from './AddImage/AddImage';
+import Detail from '../Detail/Detail';
 
 const Stack = createStackNavigator();
 
@@ -18,6 +19,7 @@ export default function HomeStackNavigator() {
       <Stack.Screen name="Record1" component={Record1} />
       <Stack.Screen name="Record2" component={Record2} />
       <Stack.Screen name="AddImage" component={AddImage} />
+      <Stack.Screen name="Detail" component={Detail} />
     </Stack.Navigator>
   );
 }
