@@ -6,25 +6,35 @@ import { ScrollView, TouchableOpacity } from 'react-native-gesture-handler';
 import { profileStyles } from './style';
 import { getDisplayHeight } from '../../../../utility';
 import NormalText from '../../../../components/CustomText/NormalText';
+import { useME } from '../../../../hooks/useMe';
 
-const data = {
-  user: {
-    name: '김갑수',
-    age: '67살',
-    location: '인천 광역시 ',
-    sick: '당뇨병',
-    tel: '010-2578-5384',
-    significant: '없습니다',
-  },
-};
+// const data = {
+//   user: {
+//     name: '김갑수',
+//     age: '67살',
+//     location: '인천 광역시 ',
+//     sick: '당뇨병',
+//     tel: '010-2578-5384',
+//     significant: '없습니다',
+//   },
+// };
 export default function Profile() {
-  const [fix, setFix] = useState(true);
-  const [age, setAge] = useState(`${data.user.age}`);
-  const [location, setLocation] = useState(`${data.user.location}`);
-  const [sick, setSick] = useState(`${data.user.sick}`);
-  const [tel, setTel] = useState(`${data.user.tel}`);
-  const [significant, setSignificant] = useState(`${data.user.significant}`);
-
+  const { data, isLoading } = useME();
+  console.log(data);
+  const [fix, setFix] = useState(false);
+  const [age, setAge] = useState(`${data.senior.age}`);
+  const [address, setAddress] = useState(`${data.senior.address}`);
+  const [illness, setIllness] = useState(`${data.senior.illness}`);
+  const [phone_number, setPhone_number] = useState(
+    `${data.senior.phone_number}`,
+  );
+  const [remark, setRemark] = useState(`${data.senior.remarks}`);
+  if (illness === 'null') {
+    setIllness('없음');
+  }
+  if (remark === 'null') {
+    setRemark('없음');
+  }
   const onPress = () => {
     setFix(!fix);
   };
@@ -36,16 +46,19 @@ export default function Profile() {
           <View style={profileStyles.imageComponent}>
             <Text style={profileStyles.info}>My Profile</Text>
             <View style={profileStyles.align}>
-              <View style={profileStyles.image}></View>
+              <Image
+                style={profileStyles.image}
+                source={{ uri: data.senior.profile_img }}
+              />
               <View style={profileStyles.profileName}>
                 <Text style={profileStyles.profileName_big}>
-                  {data.user.name}
+                  {data.senior.name}
                 </Text>
                 {/* <Text style={profileStyles.profileName_small}>님</Text> */}
               </View>
             </View>
           </View>
-          {!fix && (
+          {fix && (
             <>
               <View style={profileStyles.infoComponent}>
                 <ProfileInput
@@ -54,24 +67,24 @@ export default function Profile() {
                   onChangeText={setAge}
                 ></ProfileInput>
                 <ProfileInput
-                  name={'Location'}
-                  value={location}
-                  onChangeText={setLocation}
+                  name={'Address'}
+                  value={address}
+                  onChangeText={setAddress}
                 ></ProfileInput>
                 <ProfileInput
                   name={'Chronic Illness'}
-                  value={sick}
-                  onChangeText={setSick}
+                  value={illness}
+                  onChangeText={setIllness}
                 ></ProfileInput>
                 <ProfileInput
                   name={'Emergency Call'}
-                  value={tel}
-                  onChangeText={setTel}
+                  value={phone_number}
+                  onChangeText={setPhone_number}
                 ></ProfileInput>
                 <ProfileInput
                   name={'Remarks'}
-                  value={significant}
-                  onChangeText={setSignificant}
+                  value={remark}
+                  onChangeText={setRemark}
                 ></ProfileInput>
               </View>
               <View style={{ alignItems: 'center' }}>
@@ -83,19 +96,20 @@ export default function Profile() {
                     style={profileStyles.fixImage}
                     source={require('../profileImages/settings.png')}
                   />
+
                   <Text style={profileStyles.info}> Save</Text>
                 </TouchableOpacity>
               </View>
             </>
           )}
-          {fix && (
+          {!fix && (
             <>
               <View style={profileStyles.infoComponent}>
                 <NormalText name={'Age'} value={age} />
-                <NormalText name={'Location'} value={location} />
-                <NormalText name={'Chronic Illness'} value={sick} />
-                <NormalText name={'Emergency Call'} value={tel} />
-                <NormalText name={'Remarks'} value={significant} />
+                <NormalText name={'Address'} value={address} />
+                <NormalText name={'Chronic Illness'} value={illness} />
+                <NormalText name={'Emergency Call'} value={phone_number} />
+                <NormalText name={'Remarks'} value={remark} />
               </View>
               <View style={{ alignItems: 'center' }}>
                 <TouchableOpacity
@@ -106,6 +120,7 @@ export default function Profile() {
                     style={profileStyles.fixImage}
                     source={require('../profileImages/settings.png')}
                   />
+
                   <Text style={profileStyles.info}> Edit</Text>
                 </TouchableOpacity>
               </View>
