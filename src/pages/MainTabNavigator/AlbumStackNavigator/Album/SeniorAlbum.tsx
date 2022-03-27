@@ -73,7 +73,7 @@ export default function SeniorAlbum() {
           <Text style={albumStyles.titleText}>Album</Text>
         </View>
         <View style={albumStyles.dateLineSenior}>
-          <DateLine type="senior" {...weekData} />
+          <DateLine type="SENIOR" {...weekData} />
         </View>
         {cardData.user.map(item => {
           return (

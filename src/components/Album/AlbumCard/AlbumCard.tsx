@@ -16,7 +16,7 @@ export default function AlbumCard(props: AlbumCardInfoWithUserType) {
       <View style={AlbumCardStyles.container}>
         <Image source={{ uri }} style={AlbumCardStyles.cardImage} />
         <View style={{ marginHorizontal: getDisplayWidth(7) }}>
-          {type === 'junior' ? (
+          {type === 'JUNIOR' ? (
             <>
               <Text style={AlbumCardStyles.cardTitle}>{title}</Text>
               <Text style={AlbumCardStyles.cardMemo}>{memo}</Text>

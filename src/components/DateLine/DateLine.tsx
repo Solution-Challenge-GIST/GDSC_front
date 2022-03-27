@@ -4,7 +4,7 @@ import { Date } from '../../type';
 import { DateLineStyles } from './style';
 
 interface DateWithUserType extends Date {
-  type: 'junior' | 'senior';
+  type: 'JUNIOR' | 'SENIOR';
 }
 
 const SeperateBar = () => {
@@ -13,18 +13,18 @@ const SeperateBar = () => {
 
 export default function DateLine(props: DateWithUserType) {
   const { year, month, day, weekday, type } = props;
-  if (type === 'junior') {
+  if (type === 'JUNIOR') {
     return (
       <View style={{ flexDirection: 'row', alignItems: 'center' }}>
         <SeperateBar />
         <Text style={DateLineStyles.juniorText}>
-          {`${year}-${month}- ${day}-${weekday}`}
+          {`${year}-${month}-${day}-${weekday}`}
         </Text>
         <SeperateBar />
       </View>
     );
   }
-  if (type === 'senior') {
+  if (type === 'SENIOR') {
     return (
       <View style={{ flexDirection: 'row', alignItems: 'center' }}>
         {/* <SeperateBar /> */}

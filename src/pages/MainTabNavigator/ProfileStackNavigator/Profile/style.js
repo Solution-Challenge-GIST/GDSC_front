@@ -25,7 +25,6 @@ export const profileStyles = StyleSheet.create({
   image: {
     width: getDisplayWidth(175),
     height: getDisplayHeight(175),
-    backgroundColor: 'gray',
     borderRadius: 40,
   },
   profileName: {
