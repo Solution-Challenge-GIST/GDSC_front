@@ -7,6 +7,7 @@ export const GET_ME = `${ACCOUNTS_BASE}/users/me`;
 //albums
 const ALBUMS_BASE = '/albums';
 export const GET_JUNIOR_ALBUMS = `${ALBUMS_BASE}/juniors/me`;
+export const GET_SENIOR_ALBUMS = `${ALBUMS_BASE}/seniors/me`;
 
 //juniors
 
