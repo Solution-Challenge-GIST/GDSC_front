@@ -5,7 +5,7 @@ import { GET_REPLIES_BY_ALBUM_ID } from '../../constants/urls';
 const getRepliesByAlbumId = async (albumId: number) => {
   const result = await axios.get(GET_REPLIES_BY_ALBUM_ID(albumId), {
     params: {
-      page: 20,
+      page: 1,
     },
   });
   return result.data;

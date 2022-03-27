@@ -7,7 +7,7 @@ import { profileStyles } from './style';
 import { getDisplayHeight } from '../../../../utility';
 import NormalText from '../../../../components/CustomText/NormalText';
 import { useME } from '../../../../hooks/accounts/useMe';
-import { useSeniorProfileUpdate } from '../../../../hooks/seniors/useSeniorProfileUpdateMutation';
+import { useSeniorProfileUpdateMutation } from '../../../../hooks/seniors/useSeniorProfileUpdateMutation';
 
 // const data = {
 //   user: {
@@ -23,7 +23,7 @@ export default function Profile() {
   const { data, isLoading } = useME();
   if (data.role === 'SENIOR' && !isLoading) {
     const { mutate, isLoading: SeniorProfileLoading } =
-      useSeniorProfileUpdate();
+      useSeniorProfileUpdateMutation();
     const [fix, setFix] = useState(false);
     const [age, setAge] = useState(`${data.senior.age}`);
     const [address, setAddress] = useState(`${data.senior.address}`);

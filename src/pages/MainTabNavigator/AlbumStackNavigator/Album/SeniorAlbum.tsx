@@ -5,6 +5,8 @@ import AlbumCard from '../../../../components/Album/AlbumCard/AlbumCard';
 import { FlatList } from 'react-native-gesture-handler';
 import { albumStyles } from '../style';
 import AlbumSeniorVoice from '../../../../components/Album/AlbumSeniorVoice/AlbumSeniorVoice';
+import { useGetSeniorAlbums } from '../../../../hooks/albums/useGetSeniorAlbums';
+import { useME } from '../../../../hooks/accounts/useMe';
 
 const Typedata = {
   type: 'senior',
@@ -59,50 +61,57 @@ const voiceData = [
   },
 ];
 export default function SeniorAlbum() {
-  return (
-    <View>
-      <ScrollView
-        bounces={true}
-        style={{ marginBottom: 92 }}
-        contentContainerStyle={{
-          flexDirection: 'row',
-          flexWrap: 'wrap',
-        }}
-      >
-        <View style={albumStyles.title}>
-          <Text style={albumStyles.titleText}>Album</Text>
-        </View>
-        <View style={albumStyles.dateLineSenior}>
-          <DateLine type="SENIOR" {...weekData} />
-        </View>
-        {cardData.user.map(item => {
-          return (
-            <View style={albumStyles.card}>
-              <AlbumCard
-                key={item.id}
-                id={item.id}
-                type={item.type}
-                username={item.username}
-                isReplied={item.isReplied}
-                uri={item.uri}
-                title={item.title}
-              />
-            </View>
-          );
-        })}
-        {voiceData.map(item => {
-          return (
-            <View style={albumStyles.voice}>
-              <AlbumSeniorVoice
-                key={item.id}
-                isReplied={item.isReplied}
-                id={item.id}
-                username={item.username}
-              />
-            </View>
-          );
-        })}
-      </ScrollView>
-    </View>
-  );
+  const { data, isLoading } = useGetSeniorAlbums();
+  const { data: Me } = useME();
+  console.log(Me);
+  if (!isLoading) {
+    return (
+      <View>
+        <ScrollView
+          bounces={true}
+          style={{ marginBottom: 92 }}
+          contentContainerStyle={{
+            flexDirection: 'row',
+            flexWrap: 'wrap',
+          }}
+        >
+          <View style={albumStyles.title}>
+            <Text style={albumStyles.titleText}>Album</Text>
+          </View>
+          <View style={albumStyles.dateLineSenior}>
+            <DateLine type="SENIOR" {...weekData} />
+          </View>
+          {data.results.map(item => {
+            return (
+              <View style={albumStyles.card}>
+                <AlbumCard
+                  key={item.album_id}
+                  id={item.album_id}
+                  type={Me.role}
+                  username={item.junior.name}
+                  isReplied={item.is_replied}
+                  uri={item.img}
+                  title={item.title}
+                />
+              </View>
+            );
+          })}
+          {voiceData.map(item => {
+            return (
+              <View style={albumStyles.voice}>
+                <AlbumSeniorVoice
+                  key={item.id}
+                  isReplied={item.isReplied}
+                  id={item.id}
+                  username={item.username}
+                />
+              </View>
+            );
+          })}
+        </ScrollView>
+      </View>
+    );
+  } else {
+    return <View></View>;
+  }
 }
