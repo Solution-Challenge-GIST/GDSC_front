@@ -26,3 +26,7 @@ export const GET_RELATIONS = `${RELATIONS_BASE}/seniors/me/juniors`;
 const SENIORS_BASE = '/seniors';
 export const SENIOR_PROFILE_UPDATE = (seniorId: number) =>
   `${SENIORS_BASE}/${seniorId}`;
+
+// simple voices
+const SIMPLE_VOICE_BASE = '/simplevoices';
+export const CREATE_SIMPLE_VOICE = `${SIMPLE_VOICE_BASE}/files`;
