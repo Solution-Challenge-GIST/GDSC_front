@@ -19,6 +19,8 @@ export const CREATE_REPLIES_BY_ALBUM_ID = (albumId: number) =>
 //juniors
 
 //relations
+const RELATIONS_BASE = '/relations';
+export const GET_RELATIONS = `${RELATIONS_BASE}/seniors/me/juniors`;
 
 //seniors
 const SENIORS_BASE = '/seniors';

@@ -3,38 +3,28 @@ import React from 'react';
 import Relativebutton from '../../../../components/button/RelativeButton';
 import { record1Styles } from './style';
 import { useNavigation } from '@react-navigation/native';
+import { useGetRelations } from '../../../../hooks/relations/useGetRelations';
 
-const data = [
-  {
-    junior_id: 1,
-    name: '배정윤',
-    relationship: '딸',
-  },
-  {
-    junior_id: 2,
-    name: '이주찬',
-    relationship: '아들',
-  },
-  {
-    junior_id: 3,
-    name: '조용환',
-    relationship: '손자',
-  },
-  {
-    junior_id: 4,
-    name: '조효준',
-    relationship: '형',
-  },
-];
-interface person {
-  name: string;
-  relationship: string;
+interface Junior {
   junior_id: number;
+  name: string;
+  profile_img: string;
+  user: number;
+}
+
+interface Relationship {
+  junior: Junior;
+  relation: string;
+  relation_id: number;
 }
 export default function Record1() {
+  const { data, isLoading } = useGetRelations();
+  if (!isLoading) {
+    console.log(data);
+  }
   const navigation = useNavigation();
-  const onChange = (props: person) => {
-    navigation.navigate('Record2', { person: props });
+  const goRecord2 = (props: Relationship) => {
+    navigation.navigate('Record2', { relationship: props });
   };
 
   return (
@@ -42,14 +32,15 @@ export default function Record1() {
       <ScrollView bounces={true} style={{ marginBottom: 92 }}>
         <View style={record1Styles.position}>
           <Text style={record1Styles.text}>누구에게 음성을 보낼까요?</Text>
-          {data.map(item => {
+          {data.map((item: Relationship) => {
+            const { junior, relation } = item;
             return (
               <View style={{ marginTop: 30 }}>
                 <Relativebutton
-                  key={item.junior_id}
-                  name={item.name}
-                  relative={item.relationship}
-                  onPress={() => onChange(item)}
+                  key={junior.junior_id}
+                  name={junior.name}
+                  relative={relation}
+                  onPress={() => goRecord2(item)}
                 ></Relativebutton>
               </View>
             );
