@@ -40,12 +40,12 @@ export default function Detail({ route }) {
           />
 
           {reply.results.map(item => {
-            const { senior, created_date, day, voice } = item;
+            const { replier, created_date, day, voice } = item;
             const [year, month, date] = created_date.split('-');
             return (
               <View style={DetailStyles.voiceContainer}>
                 <VoiceReply
-                  username={senior.name}
+                  username={replier.name}
                   voice={voice}
                   day={DAY[day]}
                   date={date}
