@@ -4,7 +4,7 @@ import { GET_SENIOR_ALBUMS } from '../../constants/urls';
 
 const getSeniorAlbums = async () => {
   const result = await axios.get(GET_SENIOR_ALBUMS, {
-    params: 20,
+    params: { page: 1 },
   });
   return result.data;
 };
