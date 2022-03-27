@@ -4,6 +4,7 @@ import { ScrollView, View } from 'react-native';
 import MainAlbumCard from '../../../components/Album/AlbumCard/MainAlbumCard';
 import VoiceReply from '../../../components/VoiceReply/VoiceReply';
 import { DAY } from '../../../constants/day';
+import { useME } from '../../../hooks/accounts/useMe';
 import { useGetAlbumByAlbumId } from '../../../hooks/albums/useGetAlbumbyAlbumId';
 import { useGetRepliesByAlbumId } from '../../../hooks/albums/useGetRepliesByAlbumId';
 import { DetailStyles } from './style';
@@ -14,11 +15,12 @@ export default function Detail({ route }) {
     useGetAlbumByAlbumId(albumId);
   const { data: reply, isLoading: replyLoading } =
     useGetRepliesByAlbumId(albumId);
-
+  const { data } = useME();
   if (!replyLoading && !albumLoading) {
     const {
       album_id,
       junior,
+      senior,
       img,
       is_replied,
       created_date: albumCreateDate,
@@ -31,7 +33,7 @@ export default function Detail({ route }) {
           <MainAlbumCard
             key={album_id}
             id={album_id}
-            username={junior.name}
+            username={data.role === 'SENIOR' ? junior.name : senior.name}
             uri={img}
             isReplied={is_replied}
             day={DAY[day]}
