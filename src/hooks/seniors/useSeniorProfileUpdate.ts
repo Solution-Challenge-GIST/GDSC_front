@@ -7,18 +7,18 @@ interface SeniorProfileInfoWithSeniorId extends SeniorProfileInfo {
   seniorId: number;
 }
 
-const seniorProfileUpdate = (props: SeniorProfileInfoWithSeniorId) => {
+const seniorProfileUpdate = async (props: SeniorProfileInfoWithSeniorId) => {
   const { seniorId } = props;
 
   let clone = { ...props };
   delete clone.seniorId;
 
-  const result = axios.put(SENIOR_PROFILE_UPDATE(seniorId), {
+  const result = await axios.put(SENIOR_PROFILE_UPDATE(seniorId), {
     ...clone,
   });
   return result.data;
 };
 
-const useSeniorProfileUpdate = (props: SeniorProfileInfoWithSeniorId) => {
+export const useSeniorProfileUpdate = () => {
   return useMutation('useSeniorProfileUpdate', seniorProfileUpdate);
 };

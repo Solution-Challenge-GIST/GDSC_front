@@ -2,8 +2,8 @@ import axios from 'axios';
 import { useQuery } from 'react-query';
 import { GET_REPLIES_BY_ALBUM_ID } from '../../constants/urls';
 
-const getRepliesByAlbumId = (albumId: number) => {
-  const result = axios.get(GET_REPLIES_BY_ALBUM_ID(albumId), {
+const getRepliesByAlbumId = async (albumId: number) => {
+  const result = await axios.get(GET_REPLIES_BY_ALBUM_ID(albumId), {
     params: {
       page: 20,
     },
