@@ -1,4 +1,4 @@
-import { View, Text, TouchableOpacity, ScrollView, Image } from 'react-native';
+import { View, Text, TouchableOpacity, ScrollView } from 'react-native';
 import React from 'react';
 import QuestionBox from '../../../../components/QuestionBox/QuestionBox';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -7,6 +7,7 @@ import { HomeStyles } from './style';
 import { getDisplayHeight, getDisplayWidth } from '../../../../utility';
 import { useNavigation } from '@react-navigation/native';
 import { useME } from '../../../../hooks/useMe';
+
 
 const cardData = [
   {
@@ -44,47 +45,39 @@ export default function Home() {
     }
   };
   return (
-    <View>
-      <ScrollView style={{ marginBottom: 92 }}>
-        <View style={HomeStyles.MainContainer}>
-          <Text style={HomeStyles.font}>There's a question!</Text>
-        </View>
-        <View
-          style={{ alignItems: 'center', marginBottom: getDisplayHeight(24) }}
-        >
-          <QuestionBox payload="What was the happiest thing your child did?"></QuestionBox>
-        </View>
+    <ScrollView style={{ marginBottom: 92 }}>
+      <View style={HomeStyles.MainContainer}>
+        <Text style={HomeStyles.font}>There's a question!</Text>
+      </View>
+      <View
+        style={{ alignItems: 'center', marginBottom: getDisplayHeight(24) }}
+      >
+        <QuestionBox payload="What was the happiest thing your child did?"></QuestionBox>
+      </View>
 
-        <View style={HomeStyles.UnanswerContainer}>
-          <Text style={HomeStyles.font}>Unanswered</Text>
-        </View>
-        <View style={{ alignItems: 'center' }}>
-          {cardData.map(item => {
-            return (
-              <View style={{ marginBottom: getDisplayHeight(30) }}>
-                <MainAlbumCard
-                  key={item.id}
-                  id={item.id}
-                  username={item.username}
-                  uri={item.uri}
-                  memo={item.memo}
-                  title={item.title}
-                  isReplied={item.isReplied}
-                  month={item.month}
-                  day={item.day}
-                  date={item.date}
-                />
-              </View>
-            );
-          })}
-        </View>
-      </ScrollView>
-      <TouchableOpacity style={HomeStyles.AudioFix} onPress={onPress}>
-        <Image
-          style={HomeStyles.AudioContainer}
-          source={require('./HomeImage/Audio.png')}
-        />
-      </TouchableOpacity>
-    </View>
+      <View style={HomeStyles.UnanswerContainer}>
+        <Text style={HomeStyles.font}>Unanswered</Text>
+      </View>
+      <View style={{ alignItems: 'center' }}>
+        {cardData.map(item => {
+          return (
+            <View style={{ marginBottom: getDisplayHeight(30) }}>
+              <MainAlbumCard
+                key={item.id}
+                id={item.id}
+                username={item.username}
+                uri={item.uri}
+                memo={item.memo}
+                title={item.title}
+                isReplied={item.isReplied}
+                month={item.month}
+                day={item.day}
+                date={item.date}
+              />
+            </View>
+          );
+        })}
+      </View>
+    </ScrollView>
   );
 }

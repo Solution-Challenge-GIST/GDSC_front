@@ -24,3 +24,12 @@ export interface AlbumCardInfoWithUserType extends AlbumCardInfo {
   type: 'junior' | 'senior';
 }
 
+export interface SeniorProfileInfo {
+  profile_img?: string;
+  name?: string;
+  age: number;
+  address?: string;
+  illness?: string;
+  phone_number?: string;
+  remarks?: string;
+}
