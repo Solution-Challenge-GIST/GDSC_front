@@ -14,8 +14,11 @@ export const voiceReplyStyles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     backgroundColor: bgColor,
-    borderRadius: 10,
+    borderRadius: 15,
     ...shadow,
+  },
+  calendar: {
+    marginLeft: getDisplayWidth(9),
   },
   username: {
     fontSize: seniorMediumFontSize,
@@ -23,7 +26,8 @@ export const voiceReplyStyles = StyleSheet.create({
     marginBottom: getDisplayHeight(16),
   },
   button: {
-    width: getDisplayWidth(72),
-    height: getDisplayHeight(38),
+    width: getDisplayWidth(70),
+    height: getDisplayHeight(39),
+    borderRadius: 8,
   },
 });
