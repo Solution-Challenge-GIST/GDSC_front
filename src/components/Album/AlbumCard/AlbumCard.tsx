@@ -3,12 +3,15 @@ import React from 'react';
 import { AlbumCardInfo, AlbumCardInfoWithUserType } from '../../../type';
 import { AlbumCardStyles } from './style';
 import { getDisplayWidth } from '../../../utility';
+import { useNavigation } from '@react-navigation/native';
 
 export default function AlbumCard(props: AlbumCardInfoWithUserType) {
   const { id, username, uri, title, memo, isReplied, type } = props;
-
+  const navigation = useNavigation();
   const goDetail = () => {
-    console.log(`postid${id}로 이동`);
+    navigation.navigate('Detail', {
+      albumId: id,
+    });
   };
 
   return (

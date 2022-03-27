@@ -10,10 +10,10 @@ export default function Calendar(props: CalendarDate) {
           <Text style={calenderStyles.bigMonthFont}>{props.month}</Text>
         </View>
         <View style={calenderStyles.bigDay}>
-          <Text style={calenderStyles.bigDayFont}>{props.day}</Text>
+          <Text style={calenderStyles.bigDayFont}>{props.date}</Text>
         </View>
         <View style={calenderStyles.bigDate}>
-          <Text style={calenderStyles.bigDateFont}>{props.date}</Text>
+          <Text style={calenderStyles.bigDateFont}>{props.day}</Text>
         </View>
       </View>
     );
@@ -24,10 +24,10 @@ export default function Calendar(props: CalendarDate) {
           <Text style={calenderStyles.smallMonthFont}>{props.month}</Text>
         </View>
         <View style={calenderStyles.smallDay}>
-          <Text style={calenderStyles.smallDayFont}>{props.day}</Text>
+          <Text style={calenderStyles.smallDayFont}>{props.date}</Text>
         </View>
         <View style={calenderStyles.smallDate}>
-          <Text style={calenderStyles.smallDateFont}>{props.date}</Text>
+          <Text style={calenderStyles.smallDateFont}>{props.day}</Text>
         </View>
       </View>
     );

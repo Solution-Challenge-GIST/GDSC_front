@@ -4,6 +4,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import SeniorAlbum from './Album/SeniorAlbum';
 import JuniorAlbum from './Album/JuniorAlbum';
 import Album from './Album/Album';
+import Detail from '../Detail/Detail';
 const Stack = createStackNavigator();
 
 export default function AlbumStackNavigator() {
@@ -12,6 +13,7 @@ export default function AlbumStackNavigator() {
       <Stack.Screen name="Album" component={Album} />
       <Stack.Screen name="SeniorAlbum" component={SeniorAlbum} />
       <Stack.Screen name="JuniorAlbum" component={JuniorAlbum} />
+      <Stack.Screen name="Detail" component={Detail} />
     </Stack.Navigator>
   );
 }

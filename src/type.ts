@@ -9,7 +9,7 @@ export interface AlbumCardInfo {
   id: number;
   username: string;
   uri: string;
-  title: string;
+  title?: string;
   memo?: string;
   isReplied: boolean;
 }
