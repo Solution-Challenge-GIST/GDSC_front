@@ -9,8 +9,17 @@ import { getDisplayHeight, getDisplayWidth } from '../../utility';
 
 export const addImageButtonStyles = StyleSheet.create({
   container: {
-    width: getDisplayWidth(390),
-    height: getDisplayHeight(170),
+    width: getDisplayWidth(380),
+    height: getDisplayHeight(320),
+    backgroundColor: bgColor,
+    borderRadius: boxBorderRadious,
+    alignItems: 'center',
+    justifyContent: 'center',
+    ...shadow,
+  },
+  Recordcontainer: {
+    width: getDisplayWidth(380),
+    height: getDisplayHeight(150),
     backgroundColor: bgColor,
     borderRadius: boxBorderRadious,
     alignItems: 'center',
@@ -36,5 +45,11 @@ export const addImageButtonStyles = StyleSheet.create({
   },
   recordingBtn: {
     alignItems: 'center',
+  },
+  revise: {
+    width: getDisplayWidth(68),
+    height: getDisplayWidth(68),
+    alignItems: 'flex-end',
+    justifyContent: 'flex-end',
   },
 });

@@ -37,6 +37,7 @@ export default function AddImageButton() {
               style={addImageButtonStyles.plus}
               source={require('./images/redPlusButton.png')}
             />
+
             <Text style={addImageButtonStyles.font}>
               Pick Image from gallery
             </Text>

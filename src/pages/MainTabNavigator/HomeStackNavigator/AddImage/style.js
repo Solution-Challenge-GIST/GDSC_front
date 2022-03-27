@@ -7,14 +7,18 @@ import { getDisplayHeight, getDisplayWidth } from '../../../../utility';
 
 export const AddImageStyles = StyleSheet.create({
   container: {
-    marginTop: getDisplayHeight(80),
-    marginHorizontal: getDisplayWidth(20),
+    marginTop: getDisplayHeight(79),
+    marginHorizontal: getDisplayWidth(27),
+  },
+  pictureText: {
+    marginBottom: getDisplayHeight(13),
   },
   font: {
     fontSize: seniorMediumFontSize,
     fontWeight: mediumFontWeight,
   },
   buttonGap: {
+    alignItems: 'center',
     marginTop: getDisplayHeight(5),
     marginBottom: getDisplayHeight(32),
   },

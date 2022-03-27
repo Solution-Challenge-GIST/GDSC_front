@@ -62,7 +62,7 @@ export default function AddVoiceButton(props: Props) {
     setRecordingStatus(undefined);
   }
   return (
-    <View style={addImageButtonStyles.container}>
+    <View style={addImageButtonStyles.Recordcontainer}>
       {!recordingStatus?.isRecording && !recordingStatus?.isDoneRecording && (
         <TouchableOpacity
           style={addImageButtonStyles.recordingBtn}
