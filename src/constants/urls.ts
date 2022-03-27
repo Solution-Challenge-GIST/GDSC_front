@@ -7,6 +7,12 @@ export const GET_ME = `${ACCOUNTS_BASE}/users/me`;
 //albums
 const ALBUMS_BASE = '/albums';
 export const GET_JUNIOR_ALBUMS = `${ALBUMS_BASE}/juniors/me`;
+export const GET_SENIOR_ALBUMS = `${ALBUMS_BASE}/seniors/me`;
+export const GET_REPLIES_BY_ALBUM_ID = (albumId: number) =>
+  `${ALBUMS_BASE}/${albumId}/replies`;
+
+export const CREATE_REPLIES_BY_ALBUM_ID = (albumId: number) =>
+  `${ALBUMS_BASE}/${albumId}/replies`;
 
 //juniors
 

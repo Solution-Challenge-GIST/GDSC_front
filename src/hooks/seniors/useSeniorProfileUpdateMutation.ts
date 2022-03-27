@@ -19,6 +19,6 @@ const seniorProfileUpdate = async (props: SeniorProfileInfoWithSeniorId) => {
   return result.data;
 };
 
-export const useSeniorProfileUpdate = () => {
+export const useSeniorProfileUpdateMutation = () => {
   return useMutation(seniorProfileUpdate);
 };
