@@ -26,8 +26,10 @@ export default function VoiceReply(props: Props) {
   return (
     <TouchableOpacity onPress={playVoice}>
       <View style={voiceReplyStyles.container}>
-        <Calendar month={month} day={day} date={date} fontSize="big" />
-        <View style={{ alignItems: 'center', marginLeft: getDisplayWidth(86) }}>
+        <View style={voiceReplyStyles.calendar}>
+          <Calendar month={month} day={day} date={date} fontSize="big" />
+        </View>
+        <View style={{ flex: 1, alignItems: 'center' }}>
           <Text style={voiceReplyStyles.username}>{username}</Text>
           <Image
             style={voiceReplyStyles.button}
