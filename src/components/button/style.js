@@ -47,4 +47,10 @@ export const styles = StyleSheet.create({
   RelativeRight: {
     ...CommonRelative,
   },
+  AudioButton: {
+    width: getDisplayWidth(100),
+    height: getDisplayHeight(100),
+    resizeMode: 'contain',
+    marginBottom: getDisplayHeight(20),
+  },
 });

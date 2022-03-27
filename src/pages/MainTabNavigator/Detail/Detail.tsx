@@ -2,10 +2,12 @@ import React from 'react';
 import { ScrollView, View } from 'react-native';
 
 import MainAlbumCard from '../../../components/Album/AlbumCard/MainAlbumCard';
+import AudioButton from '../../../components/button/AudioButton';
 import VoiceReply from '../../../components/VoiceReply/VoiceReply';
 import { DAY } from '../../../constants/day';
 import { useGetAlbumByAlbumId } from '../../../hooks/albums/useGetAlbumbyAlbumId';
 import { useGetRepliesByAlbumId } from '../../../hooks/albums/useGetRepliesByAlbumId';
+import { getDisplayHeight } from '../../../utility';
 import { DetailStyles } from './style';
 
 export default function Detail({ route }) {
@@ -54,6 +56,9 @@ export default function Detail({ route }) {
               </View>
             );
           })}
+        </View>
+        <View style={{ marginTop: getDisplayHeight(20) }}>
+          <AudioButton />
         </View>
       </ScrollView>
     );
