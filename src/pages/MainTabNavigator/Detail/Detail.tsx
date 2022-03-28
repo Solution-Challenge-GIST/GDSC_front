@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ScrollView, View } from 'react-native';
 
 import MainAlbumCard from '../../../components/Album/AlbumCard/MainAlbumCard';
@@ -13,11 +13,13 @@ import { DetailStyles } from './style';
 
 export default function Detail({ route }) {
   const albumId = route.params.albumId;
+
+  const { data } = useME();
   const { data: album, isLoading: albumLoading } =
     useGetAlbumByAlbumId(albumId);
   const { data: reply, isLoading: replyLoading } =
     useGetRepliesByAlbumId(albumId);
-  const { data } = useME();
+
   if (!replyLoading && !albumLoading) {
     const {
       album_id,
@@ -60,7 +62,7 @@ export default function Detail({ route }) {
           })}
         </View>
         <View style={{ marginTop: getDisplayHeight(20) }}>
-          <AudioButton />
+          <AudioButton albumId={albumId} />
         </View>
       </ScrollView>
     );

@@ -34,7 +34,6 @@ export default function JuniorHome() {
           </View>
           <View style={{ alignItems: 'center' }}>
             {albumJunior.results.map(item => {
-              console.log(item);
               if (item.is_replied === false) {
                 const [year, month, date] = item.created_date.split('-');
                 return (
