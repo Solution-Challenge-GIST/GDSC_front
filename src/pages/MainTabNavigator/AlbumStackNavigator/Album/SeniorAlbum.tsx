@@ -7,6 +7,7 @@ import { albumStyles } from '../style';
 import AlbumSeniorVoice from '../../../../components/Album/AlbumSeniorVoice/AlbumSeniorVoice';
 import { useGetSeniorAlbums } from '../../../../hooks/albums/useGetSeniorAlbums';
 import { useME } from '../../../../hooks/accounts/useMe';
+import { useGetSeniorVoices } from '../../../../hooks/simplevoices/useGetSeniorVoices';
 
 const Typedata = {
   type: 'senior',
@@ -17,37 +18,37 @@ const weekData = {
   day: '13',
   weekday: '일요일',
 };
-const cardData = {
-  user: [
-    {
-      id: 10,
-      type: 'senior',
-      username: '김민국',
-      uri: 'https://media.istockphoto.com/videos/family-sitting-on-sofa-at-home-eating-popcorn-and-watching-movie-video-id1153425623?b=1&k=6&m=1153425623&s=640x640&h=j79ksgz6Q_JFCyzPjG7VLGC8dARlbb3DLrVWCjQVvrc=',
-      title: '멋진 우리 할아버지',
-      memo: '메모 내용 어쩌구저쩌구 이런 일이 있었구 저런 일이 있었구...',
-      isReplied: false,
-    },
-    {
-      id: 11,
-      type: 'senior',
-      username: '조용환',
-      uri: 'https://media.istockphoto.com/videos/family-sitting-on-sofa-at-home-eating-popcorn-and-watching-movie-video-id1153425623?b=1&k=6&m=1153425623&s=640x640&h=j79ksgz6Q_JFCyzPjG7VLGC8dARlbb3DLrVWCjQVvrc=',
-      title: '멋진 우리 할아버지',
-      memo: '메모 내용 어쩌구저쩌구 이런 일이 있었구 저런 일이 있었구...',
-      isReplied: true,
-    },
-    {
-      id: 12,
-      type: 'senior',
-      username: '이주찬',
-      uri: 'https://media.istockphoto.com/videos/family-sitting-on-sofa-at-home-eating-popcorn-and-watching-movie-video-id1153425623?b=1&k=6&m=1153425623&s=640x640&h=j79ksgz6Q_JFCyzPjG7VLGC8dARlbb3DLrVWCjQVvrc=',
-      title: '멋진 우리 할아버지',
-      memo: '메모 내용 어쩌구저쩌구 이런 일이 있었구 저런 일이 있었구...',
-      isReplied: false,
-    },
-  ],
-};
+// const cardData = {
+//   user: [
+//     {
+//       id: 10,
+//       type: 'senior',
+//       username: '김민국',
+//       uri: 'https://media.istockphoto.com/videos/family-sitting-on-sofa-at-home-eating-popcorn-and-watching-movie-video-id1153425623?b=1&k=6&m=1153425623&s=640x640&h=j79ksgz6Q_JFCyzPjG7VLGC8dARlbb3DLrVWCjQVvrc=',
+//       title: '멋진 우리 할아버지',
+//       memo: '메모 내용 어쩌구저쩌구 이런 일이 있었구 저런 일이 있었구...',
+//       isReplied: false,
+//     },
+//     {
+//       id: 11,
+//       type: 'senior',
+//       username: '조용환',
+//       uri: 'https://media.istockphoto.com/videos/family-sitting-on-sofa-at-home-eating-popcorn-and-watching-movie-video-id1153425623?b=1&k=6&m=1153425623&s=640x640&h=j79ksgz6Q_JFCyzPjG7VLGC8dARlbb3DLrVWCjQVvrc=',
+//       title: '멋진 우리 할아버지',
+//       memo: '메모 내용 어쩌구저쩌구 이런 일이 있었구 저런 일이 있었구...',
+//       isReplied: true,
+//     },
+//     {
+//       id: 12,
+//       type: 'senior',
+//       username: '이주찬',
+//       uri: 'https://media.istockphoto.com/videos/family-sitting-on-sofa-at-home-eating-popcorn-and-watching-movie-video-id1153425623?b=1&k=6&m=1153425623&s=640x640&h=j79ksgz6Q_JFCyzPjG7VLGC8dARlbb3DLrVWCjQVvrc=',
+//       title: '멋진 우리 할아버지',
+//       memo: '메모 내용 어쩌구저쩌구 이런 일이 있었구 저런 일이 있었구...',
+//       isReplied: false,
+//     },
+//   ],
+// };
 const voiceData = [
   {
     isReplied: true,
@@ -62,9 +63,9 @@ const voiceData = [
 ];
 export default function SeniorAlbum() {
   const { data, isLoading } = useGetSeniorAlbums();
+  const { data: voice, isLoading: voiceLoading } = useGetSeniorVoices();
   const { data: Me } = useME();
-  console.log(Me);
-  if (!isLoading) {
+  if (!isLoading && !voiceLoading) {
     return (
       <View>
         <ScrollView
@@ -96,14 +97,15 @@ export default function SeniorAlbum() {
               </View>
             );
           })}
-          {voiceData.map(item => {
+          {voice.results.map(item => {
             return (
               <View style={albumStyles.voice}>
                 <AlbumSeniorVoice
-                  key={item.id}
-                  isReplied={item.isReplied}
-                  id={item.id}
-                  username={item.username}
+                  key={item.simplevoice_id}
+                  isReplied={false}
+                  id={item.simplevoice_id}
+                  username={item.junior.name}
+                  voiceURI={item.voice}
                 />
               </View>
             );
