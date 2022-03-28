@@ -2,26 +2,40 @@ import { useNavigation } from '@react-navigation/native';
 import { Image, Text, TouchableOpacity, View } from 'react-native';
 import { useME } from '../../../hooks/accounts/useMe';
 import { AlbumCardInfo } from '../../../type';
-import { getDisplayWidth } from '../../../utility';
 import Calendar from '../../calendar/Calendar';
 import { AlbumCardStyles } from './style';
-interface MainAlbum extends AlbumCardInfo {
+import { Audio } from 'expo-av';
+import { useEffect, useState } from 'react';
+interface DetailAlbum extends AlbumCardInfo {
   month: string;
   day: string;
   date: string;
+  voice: string;
 }
-export default function MainAlbumCard(props: MainAlbum) {
+export default function DetailAlbumCard(props: DetailAlbum) {
   const navigation = useNavigation();
-  const { id, username, uri, isReplied, month, day, date } = props;
+  const { id, username, uri, isReplied, voice, month, day, date } = props;
+  const [sound, setSound] = useState();
   const { data: Me } = useME();
-
-  const goDetail = () => {
-    navigation.navigate('Detail', { albumId: id });
+  const onVoice = () => {
+    playSound();
   };
+  async function playSound() {
+    const { sound } = await Audio.Sound.createAsync({ uri: voice });
+    setSound(sound);
+    await sound.playAsync();
+  }
 
+  useEffect(() => {
+    return sound
+      ? () => {
+          sound.unloadAsync();
+        }
+      : undefined;
+  }, [sound]);
   return (
     <View>
-      <TouchableOpacity onPress={goDetail}>
+      <TouchableOpacity onPress={onVoice}>
         <View style={AlbumCardStyles.Maincontainer}>
           <Image source={{ uri }} style={AlbumCardStyles.MainCardImage} />
           <View

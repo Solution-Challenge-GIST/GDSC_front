@@ -46,7 +46,7 @@ export async function makeVoiceUri(uri: string) {
 
 const createAlbum = async ({ seniorId, voiceUri, imageUri }) => {
   const result = await axios.post(CREATE_ALBUM(seniorId), {
-    image: imageUri,
+    img: imageUri,
     voice: voiceUri,
   });
   return result.data;

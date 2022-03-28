@@ -26,7 +26,7 @@ export default function AlbumCard(props: AlbumCardInfoWithUserType) {
             </>
           ) : (
             <>
-              <Text style={AlbumCardStyles.seniorUserInfo}>Sent by</Text>
+              <Text style={AlbumCardStyles.seniorUserInfo}>From</Text>
               <Text style={AlbumCardStyles.seniorUserInfo}>{username}</Text>
             </>
           )}

@@ -1,9 +1,9 @@
 import { View, Text, TouchableOpacity, Image } from 'react-native';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { voiceReplyStyles } from './style';
 import Calendar from '../calendar/Calendar';
 import { getDisplayWidth } from '../../utility';
-
+import { Audio } from 'expo-av';
 interface Props {
   username: string;
   voice: string;
@@ -20,9 +20,24 @@ interface Props {
 
 export default function VoiceReply(props: Props) {
   const { username, voice, month, day, date } = props;
+  const [sound, setSound] = useState();
   const playVoice = () => {
-    console.log('voice 파일이 실행됨');
+    playSound();
   };
+  async function playSound() {
+    const { sound } = await Audio.Sound.createAsync({ uri: voice });
+    setSound(sound);
+    await sound.playAsync();
+  }
+
+  useEffect(() => {
+    return sound
+      ? () => {
+          sound.unloadAsync();
+        }
+      : undefined;
+  }, [sound]);
+
   return (
     <TouchableOpacity onPress={playVoice}>
       <View style={voiceReplyStyles.container}>

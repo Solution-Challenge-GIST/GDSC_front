@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { ScrollView, View } from 'react-native';
+import DetailAlbumCard from '../../../components/Album/AlbumCard/DetailAlbumCard';
 
 import MainAlbumCard from '../../../components/Album/AlbumCard/MainAlbumCard';
 import AudioButton from '../../../components/button/AudioButton';
@@ -19,7 +20,7 @@ export default function Detail({ route }) {
     useGetAlbumByAlbumId(albumId);
   const { data: reply, isLoading: replyLoading } =
     useGetRepliesByAlbumId(albumId);
-
+  console.log('asdfasfasdfas', album);
   if (!replyLoading && !albumLoading) {
     const {
       album_id,
@@ -29,14 +30,16 @@ export default function Detail({ route }) {
       is_replied,
       created_date: albumCreateDate,
       day,
+      voice,
     } = album;
     const [AlbumYear, AlbumMonth, AlbumDate] = albumCreateDate.split('-');
     return (
       <ScrollView style={{ marginBottom: 92 }}>
         <View style={DetailStyles.container}>
-          <MainAlbumCard
+          <DetailAlbumCard
             key={album_id}
             id={album_id}
+            voice={voice}
             username={data.role === 'SENIOR' ? junior.name : senior.name}
             uri={img}
             isReplied={is_replied}

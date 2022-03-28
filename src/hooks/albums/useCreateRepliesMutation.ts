@@ -9,7 +9,6 @@ import {
 
 export async function makeReplyVoiceUri(uri: string, albumId: number) {
   const path = `${BASE_URL}${CREATE_REPLY_VOICE_URI(albumId)}`;
-  console.log('asdfasdf', path);
   let type = uri.substring(uri.lastIndexOf('.') + 1);
   const form = new FormData();
   form.append('voice', { uri, name: uri, type: `audio/${type}` } as any);
@@ -27,7 +26,6 @@ export async function makeReplyVoiceUri(uri: string, albumId: number) {
 }
 
 const createReplies = async ({ albumId, voice }) => {
-  console.log('createreplie api adress: ', CREATE_REPLIES_BY_ALBUM_ID(albumId));
   const result = await axios.post(CREATE_REPLIES_BY_ALBUM_ID(albumId), {
     voice,
   });
