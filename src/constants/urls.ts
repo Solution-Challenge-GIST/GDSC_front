@@ -30,3 +30,4 @@ export const SENIOR_PROFILE_UPDATE = (seniorId: number) =>
 // simple voices
 const SIMPLE_VOICE_BASE = '/simplevoices';
 export const CREATE_SIMPLE_VOICE = `${SIMPLE_VOICE_BASE}/files`;
+export const GET_SENIOR_VOICES = `${SIMPLE_VOICE_BASE}/seniors/me`;
