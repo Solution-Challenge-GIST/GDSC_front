@@ -4,7 +4,7 @@ import { addImageButtonStyles } from './styles';
 import * as ImagePicker from 'expo-image-picker';
 import { boxBorderRadious } from '../../style/share';
 
-export default function AddImageButton() {
+export default function AddImageButton({ getImageURI }) {
   const [pickedImagePath, setPickedImagePath] = useState('');
 
   const showImagePicker = async () => {
@@ -20,11 +20,10 @@ export default function AddImageButton() {
     const result = await ImagePicker.launchImageLibraryAsync();
 
     // Explore the result
-    console.log(result);
 
     if (!result.cancelled) {
       setPickedImagePath(result.uri);
-      console.log(result.uri);
+      getImageURI(result.uri);
     }
   };
 

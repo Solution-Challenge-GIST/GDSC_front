@@ -1,12 +1,17 @@
 import { Audio } from 'expo-av';
 import React, { useState } from 'react';
 import { Image, TouchableOpacity, View } from 'react-native';
+import {
+  makeReplyVoiceUri,
+  useCreateRepliesMutation,
+} from '../../hooks/albums/useCreateRepliesMutation';
 import { styles } from './style';
 
-export default function AudioButton() {
+export default function AudioButton({ albumId }: { albumId: number }) {
   const [recording, setRecording] = useState<Audio.Recording>();
   const [recordingStatus, setRecordingStatus] =
     useState<Audio.RecordingStatus>();
+  const { mutate } = useCreateRepliesMutation();
 
   async function startRecording() {
     try {
@@ -41,23 +46,26 @@ export default function AudioButton() {
 
     try {
       await recording.stopAndUnloadAsync();
-      console.log(recording.getURI());
-      //axios하니 보내고
+      const voice = await makeReplyVoiceUri(recording.getURI(), albumId);
+
+      const data = { albumId, voice };
+      mutate(data, {
+        onSuccess: data => {
+          console.log(data);
+        },
+      });
       reRecord();
+      //axios하니 보내고
     } catch (error) {
       // Do nothing -- we are already unloaded.
     }
-  }
-
-  async function playRecord() {
-    const { sound } = await recording.createNewLoadedSoundAsync();
-    sound.replayAsync();
   }
 
   async function reRecord() {
     setRecording(undefined);
     setRecordingStatus(undefined);
   }
+
   return (
     <View style={{ alignItems: 'center' }}>
       {!recordingStatus?.isRecording && !recordingStatus?.isDoneRecording && (

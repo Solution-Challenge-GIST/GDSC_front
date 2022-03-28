@@ -40,7 +40,6 @@ export default function AddVoiceButton(props: Props) {
 
   async function stopRecording() {
     if (!recording) {
-      console.log('You are not recording.');
       return;
     }
 

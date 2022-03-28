@@ -12,6 +12,10 @@ import { getDisplayHeight, getDisplayWidth } from '../../../../utility';
 import RadioButton from './radioButton/RadioButton';
 import NormalButton from '../../../../components/button/NormalButton';
 import { Audio } from 'expo-av';
+import {
+  makeSimpleVoiceUri,
+  useCreateSimpleVoice,
+} from '../../../../hooks/simplevoices/useCreateSimpleVoice';
 
 export default function Record2({ route }) {
   const relationInfo = route.params.relationship;
@@ -19,12 +23,17 @@ export default function Record2({ route }) {
   const [recordingStatus, setRecordingStatus] =
     useState<Audio.RecordingStatus>();
   const [recordURI, setRecordURI] = useState();
-
+  const { mutate } = useCreateSimpleVoice();
   const onSave = async () => {
-    let recordFile = new FormData();
-    recordFile.append('file', recordURI);
-    console.log(recordFile);
+    const voiceURI = await makeSimpleVoiceUri(recordURI);
+    const data = { juniorId: relationInfo.junior.junior_id, voice: voiceURI };
+    mutate(data, {
+      onSuccess: data => {
+        console.log(data);
+      },
+    });
   };
+
   async function startRecording() {
     try {
       await Audio.requestPermissionsAsync();
