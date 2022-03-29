@@ -1,19 +1,30 @@
 import { useNavigation } from '@react-navigation/native';
 import { View, Text, TouchableOpacity, ScrollView, Image } from 'react-native';
+import { useFocusEffect } from '@react-navigation/native';
 import MainAlbumCard from '../../../../components/Album/AlbumCard/MainAlbumCard';
 import QuestionBox from '../../../../components/QuestionBox/QuestionBox';
 import { DAY } from '../../../../constants/day';
 import { useGetJuniorAlbums } from '../../../../hooks/albums/useGetJuniorAlbums';
 import { getDisplayHeight } from '../../../../utility';
 import { HomeStyles } from './style';
+import { useCallback } from 'react';
 
 export default function JuniorHome() {
   const navigation = useNavigation();
-  const { data: albumJunior, isLoading: JuniorLoading } = useGetJuniorAlbums();
+  const {
+    data: albumJunior,
+    isLoading: isJuniorLoading,
+    refetch: refetchJunior,
+  } = useGetJuniorAlbums();
+  useFocusEffect(
+    useCallback(() => {
+      refetchJunior();
+    }, []),
+  );
   const onPress = () => {
     navigation.navigate('AddImage');
   };
-  if (!JuniorLoading) {
+  if (!isJuniorLoading) {
     return (
       <View>
         <ScrollView style={{ marginBottom: 92 }}>

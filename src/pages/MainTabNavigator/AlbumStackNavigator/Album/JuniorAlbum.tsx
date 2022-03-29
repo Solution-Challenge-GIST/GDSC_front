@@ -1,9 +1,9 @@
 import { View, Text, ScrollView } from 'react-native';
-import React from 'react';
+import React, { useCallback } from 'react';
+import { useFocusEffect } from '@react-navigation/native';
 import DateLine from '../../../../components/DateLine/DateLine';
 import AlbumCard from '../../../../components/Album/AlbumCard/AlbumCard';
 import { albumStyles } from '../style';
-import AlbumSeniorVoice from '../../../../components/Album/AlbumSeniorVoice/AlbumSeniorVoice';
 import AlbumJuniorVoice from '../../../../components/Album/AlbumJuniorVoice/AlbumJuniorVoice';
 import { useGetJuniorAlbums } from '../../../../hooks/albums/useGetJuniorAlbums';
 import { useME } from '../../../../hooks/accounts/useMe';
@@ -12,39 +12,8 @@ const weekData = {
   year: '2022',
   month: '03',
   day: '13',
-  weekday: '일요일',
+  weekday: 'Sun',
 };
-// const cardData = {
-//   user: [
-//     {
-//       id: 10,
-//       type: 'junior',
-//       username: '김민국',
-//       uri: 'https://media.istockphoto.com/videos/family-sitting-on-sofa-at-home-eating-popcorn-and-watching-movie-video-id1153425623?b=1&k=6&m=1153425623&s=640x640&h=j79ksgz6Q_JFCyzPjG7VLGC8dARlbb3DLrVWCjQVvrc=',
-//       title: '멋진 우리 할아버지',
-//       memo: '메모 내용 어쩌구저쩌구 이런 일이 있었구 저런 일이 있었구...',
-//       isReplied: false,
-//     },
-//     {
-//       id: 11,
-//       type: 'junior',
-//       username: '조용환',
-//       uri: 'https://media.istockphoto.com/videos/family-sitting-on-sofa-at-home-eating-popcorn-and-watching-movie-video-id1153425623?b=1&k=6&m=1153425623&s=640x640&h=j79ksgz6Q_JFCyzPjG7VLGC8dARlbb3DLrVWCjQVvrc=',
-//       title: '멋진 우리 할아버지',
-//       memo: '메모 내용 어쩌구저쩌구 이런 일이 있었구 저런 일이 있었구...',
-//       isReplied: true,
-//     },
-//     {
-//       id: 12,
-//       type: 'junior',
-//       username: '이주찬',
-//       uri: 'https://media.istockphoto.com/videos/family-sitting-on-sofa-at-home-eating-popcorn-and-watching-movie-video-id1153425623?b=1&k=6&m=1153425623&s=640x640&h=j79ksgz6Q_JFCyzPjG7VLGC8dARlbb3DLrVWCjQVvrc=',
-//       title: '멋진 우리 할아버지',
-//       memo: '메모 내용 어쩌구저쩌구 이런 일이 있었구 저런 일이 있었구...',
-//       isReplied: false,
-//     },
-//   ],
-// };
 const voiceData = [
   {
     isReplied: true,
@@ -60,9 +29,20 @@ const voiceData = [
   },
 ];
 export default function JuniorAlbum() {
-  const { data, isLoading } = useGetJuniorAlbums();
-  const { data: my, isLoading: MeLoading } = useME();
-  if (!isLoading && !MeLoading) {
+  const { data: my, isLoading: isMeLoading } = useME();
+  const {
+    data: juniorAlbum,
+    isLoading: isJuniorAlbumLoading,
+    refetch: refetchJuniorAlbum,
+  } = useGetJuniorAlbums();
+
+  useFocusEffect(
+    useCallback(() => {
+      refetchJuniorAlbum();
+    }, []),
+  );
+
+  if (!isJuniorAlbumLoading && !isMeLoading) {
     return (
       <View>
         <ScrollView
@@ -79,7 +59,7 @@ export default function JuniorAlbum() {
           <View style={albumStyles.dateLineSenior}>
             <DateLine type={my.role} {...weekData} />
           </View>
-          {data.results.map(item => {
+          {juniorAlbum.results.map(item => {
             return (
               <View style={albumStyles.card}>
                 <AlbumCard
