@@ -9,7 +9,7 @@ import { BASE_URL } from './src/constants/urls';
 import { JUNIOR_TOKEN, SENIOR_TOKEN } from './src/constants/token';
 
 const Stack = createStackNavigator();
-const queryClient = new QueryClient();
+export const queryClient = new QueryClient();
 //axios.defaults.headers.common['Authorization'] = JUNIOR_TOKEN;
 axios.defaults.headers.common['Authorization'] = SENIOR_TOKEN;
 

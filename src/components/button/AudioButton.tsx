@@ -1,6 +1,7 @@
 import { Audio } from 'expo-av';
 import React, { useState } from 'react';
 import { Image, TouchableOpacity, View } from 'react-native';
+import { queryClient } from '../../../App';
 import {
   makeReplyVoiceUri,
   useCreateRepliesMutation,
@@ -52,6 +53,7 @@ export default function AudioButton({ albumId }: { albumId: number }) {
       mutate(data, {
         onSuccess: data => {
           console.log(data);
+          queryClient.invalidateQueries('useGetRepliesByAlbumId');
         },
       });
       reRecord();
