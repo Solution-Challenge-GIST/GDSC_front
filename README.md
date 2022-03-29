@@ -9,3 +9,8 @@
 [Stack / Tab Navigator 같이 사용하기](https://dev.to/easybuoy/combining-stack-tab-drawer-navigations-in-react-native-with-react-navigation-5-da)
 
 [custom Tab bar](https://www.youtube.com/watch?v=gPaBicMaib4)
+
+- [ ] navigate to Home when create Album
+- [ ] refetch detail but isReplied not change need fix
+- [ ] set Status Bar style dark
+- [ ] junior album contents empty now design change need ( because of empty memo)
