@@ -13,7 +13,7 @@ export const boldFontWeight = '700';
 export const seniorMediumFontSize = 28;
 export const juniorMediumFontSize = 18;
 export const juniorSmallFontSize = 11;
-export const seniorBigFontSize = 48;
+export const seniorBigFontSize = 44;
 
 // etc
 export const boxBorderRadious = getDisplayWidth(26);
