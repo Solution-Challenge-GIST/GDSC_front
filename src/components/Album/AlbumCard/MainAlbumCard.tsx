@@ -37,7 +37,7 @@ export default function MainAlbumCard(props: MainAlbum) {
             </View>
             {Me.role === 'SENIOR' && (
               <View>
-                <Text style={AlbumCardStyles.MainUserInfo}>from</Text>
+                <Text style={AlbumCardStyles.MainUserInfo}>From</Text>
                 <Text style={AlbumCardStyles.MainUserInfo}>{username}</Text>
               </View>
             )}
