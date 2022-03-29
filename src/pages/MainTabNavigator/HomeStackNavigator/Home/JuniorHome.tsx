@@ -51,6 +51,7 @@ export default function JuniorHome() {
                   <View style={{ marginBottom: getDisplayHeight(30) }}>
                     <MainAlbumCard
                       key={item.album_id}
+                      emotion={item.emotion}
                       id={item.album_id}
                       username={item.senior.name}
                       uri={item.img}

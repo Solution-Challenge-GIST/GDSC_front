@@ -30,6 +30,7 @@ export default function Detail({ route }) {
       created_date: albumCreateDate,
       day,
       voice,
+      emotion,
     } = album;
     const [AlbumYear, AlbumMonth, AlbumDate] = albumCreateDate.split('-');
     return (
@@ -37,6 +38,7 @@ export default function Detail({ route }) {
         <View style={DetailStyles.container}>
           <DetailAlbumCard
             key={album_id}
+            emotion={emotion}
             id={album_id}
             voice={voice}
             username={data.role === 'SENIOR' ? junior.name : senior.name}
@@ -48,13 +50,14 @@ export default function Detail({ route }) {
           />
 
           {reply.results.map(item => {
-            const { replier, created_date, day, voice } = item;
+            const { replier, created_date, day, voice, emotion } = item;
             const [year, month, date] = created_date.split('-');
             return (
               <View style={DetailStyles.voiceContainer}>
                 <VoiceReply
                   username={replier.name}
                   voice={voice}
+                  emotion={emotion}
                   day={DAY[day]}
                   date={date}
                   month={month}

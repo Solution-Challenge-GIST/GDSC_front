@@ -55,6 +55,7 @@ export default function SeniorAlbum() {
                   key={item.album_id}
                   id={item.album_id}
                   type={me.role}
+                  emotion={item.emotion}
                   username={item.junior.name}
                   isReplied={item.is_replied}
                   uri={item.img}
