@@ -8,10 +8,10 @@ interface inputType {
 }
 export default function NormalText(props: inputType) {
   var len = 0;
-  if (props.value.length / 18 - parseInt(props.value.length / 17) === 0.0) {
-    len = parseInt(props.value.length / 17);
+  if (props.value.length > 19) {
+    len = 2;
   } else {
-    len = parseInt(props.value.length / 17) + 1;
+    len = 1;
   }
   return (
     <View>

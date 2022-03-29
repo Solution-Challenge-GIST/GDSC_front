@@ -8,18 +8,17 @@ interface inputType {
   onChangeText: Function;
 }
 export default function ProfileInput(props: inputType) {
-  var len;
-  if (props.value.length / 17 - parseInt(props.value.length / 17) === 0.0) {
-    len = parseInt(props.value.length / 17);
+  let len;
+  if (props.value.length > 19) {
+    len = 2;
   } else {
-    len = parseInt(props.value.length / 17) + 1;
+    len = 1;
   }
+
   return (
     <View style={{ justifyContent: 'center' }}>
       <Text style={styles.ProfileName}>{props.name}</Text>
-      <View
-        style={{ ...styles.ProfileInput, height: getDisplayHeight(69 * len) }}
-      >
+      <View style={{ ...styles.ProfileInput, height: getDisplayHeight(69) }}>
         <TextInput
           style={styles.ProfileValue}
           onChangeText={props.onChangeText}
