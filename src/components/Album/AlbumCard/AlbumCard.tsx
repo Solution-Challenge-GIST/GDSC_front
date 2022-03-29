@@ -4,9 +4,10 @@ import { AlbumCardInfoWithUserType } from '../../../type';
 import { AlbumCardStyles } from './style';
 import { getDisplayWidth } from '../../../utility';
 import { useNavigation } from '@react-navigation/native';
+import { emotions } from './MainAlbumCard';
 
 export default function AlbumCard(props: AlbumCardInfoWithUserType) {
-  const { id, username, uri, title, memo, isReplied, type } = props;
+  const { id, username, uri, title, memo, isReplied, type, emotion } = props;
   const navigation = useNavigation();
   const goDetail = () => {
     navigation.navigate('Detail', {
@@ -22,7 +23,7 @@ export default function AlbumCard(props: AlbumCardInfoWithUserType) {
           {type === 'JUNIOR' ? (
             <>
               <Text style={AlbumCardStyles.cardTitle}>{title}</Text>
-              {/* <Text style={AlbumCardStyles.cardMemo}>{memo}</Text> */}
+              <Text style={AlbumCardStyles.cardMemo}>{memo}</Text>
             </>
           ) : (
             <>
@@ -42,6 +43,10 @@ export default function AlbumCard(props: AlbumCardInfoWithUserType) {
             source={require('../images/needReply.png')}
           />
         )}
+        <Image
+          style={AlbumCardStyles.albumeEmotion}
+          source={emotions[emotion]}
+        />
       </View>
     </TouchableOpacity>
   );

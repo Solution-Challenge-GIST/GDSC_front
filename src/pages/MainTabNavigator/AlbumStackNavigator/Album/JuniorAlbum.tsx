@@ -70,7 +70,7 @@ export default function JuniorAlbum() {
                   username={item.junior.name}
                   isReplied={item.is_replied}
                   uri={item.img}
-                  title={item.title}
+                  title={item.memo.title}
                 />
               </View>
             );

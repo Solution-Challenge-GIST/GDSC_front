@@ -6,6 +6,7 @@ import Calendar from '../../calendar/Calendar';
 import { AlbumCardStyles } from './style';
 import { Audio } from 'expo-av';
 import { useEffect, useState } from 'react';
+import { emotions } from './MainAlbumCard';
 interface DetailAlbum extends AlbumCardInfo {
   month: string;
   day: string;
@@ -14,7 +15,8 @@ interface DetailAlbum extends AlbumCardInfo {
 }
 export default function DetailAlbumCard(props: DetailAlbum) {
   const navigation = useNavigation();
-  const { id, username, uri, isReplied, voice, month, day, date } = props;
+  const { id, username, uri, isReplied, voice, month, day, date, emotion } =
+    props;
   const [sound, setSound] = useState();
   const { data: Me } = useME();
   const onVoice = () => {
@@ -67,6 +69,7 @@ export default function DetailAlbumCard(props: DetailAlbum) {
               source={require('../images/needReply.png')}
             />
           )}
+          <Image style={AlbumCardStyles.emotion} source={emotions[emotion]} />
         </View>
       </TouchableOpacity>
     </View>

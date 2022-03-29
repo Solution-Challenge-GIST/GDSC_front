@@ -12,14 +12,15 @@ interface Props {
   date: string;
 }
 
-// const date = {
-//   month: '03',
-//   date: '26',
-//   day: 'Sat',
-// };
+const emotions = {
+  HAPPY: '😄',
+  SOSO: '🙂',
+  SAD: '😢',
+  ANGRY: '😠',
+};
 
 export default function VoiceReply(props: Props) {
-  const { username, voice, month, day, date } = props;
+  const { username, voice, month, day, date, emotion } = props;
   const [sound, setSound] = useState();
   const playVoice = () => {
     playSound();
@@ -45,7 +46,10 @@ export default function VoiceReply(props: Props) {
           <Calendar month={month} day={day} date={date} fontSize="big" />
         </View>
         <View style={{ flex: 1, alignItems: 'center' }}>
-          <Text style={voiceReplyStyles.username}>{username}</Text>
+          <Text style={voiceReplyStyles.username}>
+            {emotions[emotion]}
+            {username}
+          </Text>
           <Image
             style={voiceReplyStyles.button}
             source={require('./images/play.png')}

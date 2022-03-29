@@ -1,6 +1,7 @@
 import { useNavigation } from '@react-navigation/native';
 import { Image, Text, TouchableOpacity, View } from 'react-native';
 import { useME } from '../../../hooks/accounts/useMe';
+import { albumStyles } from '../../../pages/MainTabNavigator/AlbumStackNavigator/style';
 import { AlbumCardInfo } from '../../../type';
 import { getDisplayWidth } from '../../../utility';
 import Calendar from '../../calendar/Calendar';
@@ -10,15 +11,21 @@ interface MainAlbum extends AlbumCardInfo {
   day: string;
   date: string;
 }
+export const emotions = {
+  SAD: require('./images/sad.png'),
+  ANGRY: require('./images/angry.png'),
+  HAPPY: require('./images/happy.png'),
+  SOSO: require('./images/soso.png'),
+};
+
 export default function MainAlbumCard(props: MainAlbum) {
   const navigation = useNavigation();
-  const { id, username, uri, isReplied, month, day, date } = props;
+  const { id, username, uri, isReplied, month, day, date, emotion } = props;
   const { data: Me } = useME();
 
   const goDetail = () => {
     navigation.navigate('Detail', { albumId: id });
   };
-
   return (
     <View>
       <TouchableOpacity onPress={goDetail}>
@@ -53,6 +60,7 @@ export default function MainAlbumCard(props: MainAlbum) {
               source={require('../images/needReply.png')}
             />
           )}
+          <Image style={AlbumCardStyles.emotion} source={emotions[emotion]} />
         </View>
       </TouchableOpacity>
     </View>
