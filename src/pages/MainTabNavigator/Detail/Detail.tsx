@@ -20,7 +20,6 @@ export default function Detail({ route }) {
     useGetAlbumByAlbumId(albumId);
   const { data: reply, isLoading: replyLoading } =
     useGetRepliesByAlbumId(albumId);
-  console.log('asdfasfasdfas', album);
   if (!replyLoading && !albumLoading) {
     const {
       album_id,
