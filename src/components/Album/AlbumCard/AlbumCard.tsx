@@ -1,6 +1,6 @@
 import { View, Text, Image, TouchableOpacity } from 'react-native';
 import React from 'react';
-import { AlbumCardInfo, AlbumCardInfoWithUserType } from '../../../type';
+import { AlbumCardInfoWithUserType } from '../../../type';
 import { AlbumCardStyles } from './style';
 import { getDisplayWidth } from '../../../utility';
 import { useNavigation } from '@react-navigation/native';

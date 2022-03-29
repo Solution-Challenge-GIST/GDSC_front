@@ -29,7 +29,7 @@ export default function DateLine(props: DateWithUserType) {
       <View style={{ flexDirection: 'row', alignItems: 'center' }}>
         {/* <SeperateBar /> */}
         <Text style={DateLineStyles.seniorText}>
-          {`${year}-${month}-${day}-${weekday}`}
+          {`${year}. ${month}. ${day}. ${weekday}`}
         </Text>
         {/* <SeperateBar /> */}
       </View>

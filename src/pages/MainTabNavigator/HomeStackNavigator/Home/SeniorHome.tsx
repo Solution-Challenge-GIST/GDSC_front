@@ -3,18 +3,30 @@ import { View, Text, TouchableOpacity, ScrollView, Image } from 'react-native';
 import MainAlbumCard from '../../../../components/Album/AlbumCard/MainAlbumCard';
 import QuestionBox from '../../../../components/QuestionBox/QuestionBox';
 import { DAY } from '../../../../constants/day';
-
+import { useFocusEffect } from '@react-navigation/native';
 import { useGetSeniorAlbums } from '../../../../hooks/albums/useGetSeniorAlbums';
 import { getDisplayHeight } from '../../../../utility';
 import { HomeStyles } from './style';
+import { useCallback } from 'react';
 
 export default function SeniorHome() {
   const navigation = useNavigation();
-  const { data: albumSenior, isLoading: JuniorLoading } = useGetSeniorAlbums();
+  const {
+    data: albumSenior,
+    isLoading: isSeniorLading,
+    refetch: refetchSenior,
+  } = useGetSeniorAlbums();
+
+  useFocusEffect(
+    useCallback(() => {
+      refetchSenior();
+    }, []),
+  );
+
   const onPress = () => {
     navigation.navigate('Record1');
   };
-  if (!JuniorLoading) {
+  if (!isSeniorLading) {
     return (
       <View>
         <ScrollView style={{ marginBottom: 92 }}>
