@@ -42,12 +42,12 @@ export const profileStyles = StyleSheet.create({
   },
   infoComponent: {
     marginTop: getDisplayHeight(22),
-    height: getDisplayHeight(700),
     alignItems: 'center',
     justifyContent: 'space-between',
     marginBottom: getDisplayHeight(74),
   },
   fixbutton: {
+    marginTop: getDisplayHeight(18),
     width: getDisplayWidth(390),
     height: getDisplayHeight(88),
     ...Commonbutton,
@@ -58,6 +58,6 @@ export const profileStyles = StyleSheet.create({
   fixImage: {
     width: getDisplayWidth(80),
     height: getDisplayHeight(80),
-    resizeMode: 'contain',
+    // resizeMode: 'contain',
   },
 });

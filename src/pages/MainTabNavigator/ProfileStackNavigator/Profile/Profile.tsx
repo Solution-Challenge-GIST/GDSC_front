@@ -9,16 +9,6 @@ import NormalText from '../../../../components/CustomText/NormalText';
 import { useME } from '../../../../hooks/accounts/useMe';
 import { useSeniorProfileUpdateMutation } from '../../../../hooks/seniors/useSeniorProfileUpdateMutation';
 
-// const data = {
-//   user: {
-//     name: '김갑수',
-//     age: '67살',
-//     location: '인천 광역시 ',
-//     sick: '당뇨병',
-//     tel: '010-2578-5384',
-//     significant: '없습니다',
-//   },
-// };
 export default function Profile() {
   const { data, isLoading } = useME();
   if (data.role === 'SENIOR' && !isLoading) {
@@ -65,7 +55,7 @@ export default function Profile() {
       return (
         <SafeAreaView>
           <ScrollView contentContainerStyle={{ flexGrow: 1 }} bounces={true}>
-            <View style={{ height: getDisplayHeight(1350) }}>
+            <View style={{ height: getDisplayHeight(1400) }}>
               <View style={profileStyles.imageComponent}>
                 <Text style={profileStyles.info}>My Profile</Text>
                 <View style={profileStyles.align}>
@@ -77,7 +67,6 @@ export default function Profile() {
                     <Text style={profileStyles.profileName_big}>
                       {data.senior.name}
                     </Text>
-                    {/* <Text style={profileStyles.profileName_small}>님</Text> */}
                   </View>
                 </View>
               </View>
@@ -119,35 +108,29 @@ export default function Profile() {
                         style={profileStyles.fixImage}
                         source={require('../profileImages/settings.png')}
                       />
-
                       <Text style={profileStyles.info}> Save</Text>
                     </TouchableOpacity>
                   </View>
                 </>
               )}
               {!fix && (
-                <>
-                  <View style={profileStyles.infoComponent}>
-                    <NormalText name={'Age'} value={age} />
-                    <NormalText name={'Address'} value={address} />
-                    <NormalText name={'Chronic Illness'} value={illness} />
-                    <NormalText name={'Emergency Call'} value={phone_number} />
-                    <NormalText name={'Remarks'} value={remarks} />
-                  </View>
-                  <View style={{ alignItems: 'center' }}>
-                    <TouchableOpacity
-                      onPress={onPressNotFix}
-                      style={profileStyles.fixbutton}
-                    >
-                      <Image
-                        style={profileStyles.fixImage}
-                        source={require('../profileImages/settings.png')}
-                      />
-
-                      <Text style={profileStyles.info}> Edit</Text>
-                    </TouchableOpacity>
-                  </View>
-                </>
+                <View style={profileStyles.infoComponent}>
+                  <NormalText name={'Age'} value={age} />
+                  <NormalText name={'Address'} value={address} />
+                  <NormalText name={'Chronic Illness'} value={illness} />
+                  <NormalText name={'Emergency Call'} value={phone_number} />
+                  <NormalText name={'Remarks'} value={remarks} />
+                  <TouchableOpacity
+                    onPress={onPressNotFix}
+                    style={profileStyles.fixbutton}
+                  >
+                    <Image
+                      style={profileStyles.fixImage}
+                      source={require('../profileImages/settings.png')}
+                    />
+                    <Text style={profileStyles.info}> Edit</Text>
+                  </TouchableOpacity>
+                </View>
               )}
             </View>
           </ScrollView>
