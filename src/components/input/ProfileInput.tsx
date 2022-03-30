@@ -18,7 +18,9 @@ export default function ProfileInput(props: inputType) {
   return (
     <View style={{ justifyContent: 'center' }}>
       <Text style={styles.ProfileName}>{props.name}</Text>
-      <View style={{ ...styles.ProfileInput, height: getDisplayHeight(69) }}>
+      <View
+        style={{ ...styles.ProfileInput, height: getDisplayHeight(69 * len) }}
+      >
         <TextInput
           style={styles.ProfileValue}
           onChangeText={props.onChangeText}
