@@ -16,6 +16,7 @@ import {
   makeSimpleVoiceUri,
   useCreateSimpleVoice,
 } from '../../../../hooks/simplevoices/useCreateSimpleVoice';
+import NormalnarrowButton from '../../../../components/button/NormalNarrowButton';
 
 export default function Record2({ route }) {
   const relationInfo = route.params.relationship;
@@ -138,9 +139,18 @@ export default function Record2({ route }) {
         </View>
         {!recordingStatus?.isRecording && recordingStatus?.isDoneRecording && (
           <View style={record2Styles.recordDoneButtonsContainer}>
-            <NormalButton onPress={onSave} text="Save" />
-            <NormalButton onPress={reRecord} text="Delete and re-recording" />
-            <NormalButton onPress={playRecord} text="Play record" />
+            <View style={{ marginBottom: getDisplayHeight(10) }}>
+              <NormalnarrowButton onPress={onSave} text="Save" />
+            </View>
+            <View style={{ marginBottom: getDisplayHeight(10) }}>
+              <NormalnarrowButton
+                onPress={reRecord}
+                text="Delete and re-recording"
+              />
+            </View>
+            <View style={{ marginBottom: getDisplayHeight(10) }}>
+              <NormalnarrowButton onPress={playRecord} text="Play record" />
+            </View>
           </View>
         )}
       </View>
