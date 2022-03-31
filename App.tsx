@@ -8,6 +8,7 @@ import axios from 'axios';
 import { BASE_URL } from './src/constants/urls';
 import { SENIOR_TOKEN } from './src/constants/token';
 import * as SplashScreen from 'expo-splash-screen';
+import { LogBox } from 'react-native';
 
 const Stack = createStackNavigator();
 export const queryClient = new QueryClient();
@@ -26,6 +27,7 @@ async function delay_splash() {
 }
 
 export default function App() {
+  LogBox.ignoreAllLogs()
   delay_splash();
   return (
     <QueryClientProvider client={queryClient}>
