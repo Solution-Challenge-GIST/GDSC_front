@@ -13,7 +13,9 @@ Expo(React Native), react-query, axios
 5-1. if you are not in same network connection change with `Tunnel`.
 
 6. if you already set simulator, `run on IOS simulato`r or `Run on Android device/emulator`
-`
+
+you can change demo user by changing token in App.tsx (we set 2 tokens. one is junior and one is senior)
+
 ## Demo
 https://www.youtube.com/watch?v=Wona-gkLTUU
 
