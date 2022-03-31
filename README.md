@@ -3,6 +3,17 @@
 ## Tech Stack
 Expo(React Native), react-query, axios
 
+## How to run
+
+1. `npm install --global expo-cli`
+2. `npm i`
+3. `expo start`
+4. go http://localhost:19002/
+5. if you want run this on your device. turn on your camera and read qr code. (your phone need to install Expo go App)
+5-1. if you are not in same network connection change with `Tunnel`.
+
+6. if you already set simulator, `run on IOS simulato`r or `Run on Android device/emulator`
+`
 ## Demo
 https://www.youtube.com/watch?v=Wona-gkLTUU
 
