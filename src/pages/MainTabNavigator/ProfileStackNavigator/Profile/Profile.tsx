@@ -98,8 +98,6 @@ export default function Profile() {
                       value={remarks}
                       onChangeText={setRemarks}
                     ></ProfileInput>
-                  </View>
-                  <View style={{ alignItems: 'center' }}>
                     <TouchableOpacity
                       onPress={onPressFix}
                       style={profileStyles.fixbutton}

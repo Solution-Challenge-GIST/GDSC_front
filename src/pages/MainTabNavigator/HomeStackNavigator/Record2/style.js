@@ -35,7 +35,7 @@ export const record2Styles = StyleSheet.create({
   },
   recordDoneButtonsContainer: {
     height: getDisplayHeight(191),
-    marginTop: getDisplayHeight(28),
+    marginTop: getDisplayHeight(10),
     justifyContent: 'space-between',
   },
 });

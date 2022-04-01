@@ -6,7 +6,7 @@ import MainTabNavigator from './src/pages/MainTabNavigator/MainTabNavigator';
 import { createStackNavigator } from '@react-navigation/stack';
 import axios from 'axios';
 import { BASE_URL } from './src/constants/urls';
-import { SENIOR_TOKEN } from './src/constants/token';
+import { JUNIOR_TOKEN, SENIOR_TOKEN } from './src/constants/token';
 import * as SplashScreen from 'expo-splash-screen';
 import { LogBox } from 'react-native';
 

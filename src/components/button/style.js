@@ -27,6 +27,13 @@ export const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+  NormalNarrowbutton: {
+    width: getDisplayWidth(390),
+    height: getDisplayHeight(70),
+    ...Commonbutton,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
   buttonfont: {
     fontWeight: mediumFontWeight,
     fontSize: seniorMediumFontSize,

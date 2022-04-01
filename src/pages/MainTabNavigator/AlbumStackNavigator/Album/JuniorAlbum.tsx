@@ -7,6 +7,7 @@ import { albumStyles } from '../style';
 import AlbumJuniorVoice from '../../../../components/Album/AlbumJuniorVoice/AlbumJuniorVoice';
 import { useGetJuniorAlbums } from '../../../../hooks/albums/useGetJuniorAlbums';
 import { useME } from '../../../../hooks/accounts/useMe';
+import { useGetJuniorVoices } from '../../../../hooks/simplevoices/useGetJuniorVoices';
 
 const weekData = {
   year: '2022',
@@ -14,20 +15,7 @@ const weekData = {
   day: '13',
   weekday: 'Sun',
 };
-const voiceData = [
-  {
-    isReplied: true,
-    id: 1,
-    username: '김민국',
-    question: '내 자식이 한 일 중에 가장 기뻤던 일은?',
-  },
-  {
-    isReplied: false,
-    id: 2,
-    username: '조용환',
-    question: '내 자식이 한 일 중에 가장 기뻤던 일은?',
-  },
-];
+
 export default function JuniorAlbum() {
   const { data: my, isLoading: isMeLoading } = useME();
   const {
@@ -35,14 +23,14 @@ export default function JuniorAlbum() {
     isLoading: isJuniorAlbumLoading,
     refetch: refetchJuniorAlbum,
   } = useGetJuniorAlbums();
-
+  const { data: voice, isLoading: voiceLoading } = useGetJuniorVoices();
   useFocusEffect(
     useCallback(() => {
       refetchJuniorAlbum();
     }, []),
   );
 
-  if (!isJuniorAlbumLoading && !isMeLoading) {
+  if (!isJuniorAlbumLoading && !isMeLoading && !voiceLoading) {
     return (
       <View>
         <ScrollView
@@ -75,23 +63,20 @@ export default function JuniorAlbum() {
               </View>
             );
           })}
-          {/* {cardData.user.map(item => {
+          {voice.results.map(item => {
             return (
-              <View style={albumStyles.card}>
-                <AlbumCard
-                  key={item.id}
-                  memo={item.memo}
-                  id={item.id}
-                  type={item.type}
-                  username={item.username}
-                  isReplied={item.isReplied}
-                  uri={item.uri}
-                  title={item.title}
+              <View style={albumStyles.voice}>
+                <AlbumJuniorVoice
+                  key={item.simplevoice_id}
+                  id={item.simplevoice_id}
+                  isReplied={false}
+                  voiceURI={item.voice}
+                  name={item.senior.name}
                 />
               </View>
             );
-          }) */}
-          {voiceData.map(item => {
+          })}
+          {/* {voiceData.map(item => {
             return (
               <View style={albumStyles.voice}>
                 <AlbumJuniorVoice
@@ -102,7 +87,7 @@ export default function JuniorAlbum() {
                 />
               </View>
             );
-          })}
+          })}*/}
         </ScrollView>
       </View>
     );
