@@ -41,3 +41,5 @@ export const CREATE_SIMPLE_VOICE_URI = `${SIMPLE_VOICE_BASE}/files`;
 export const GET_SENIOR_VOICES = `${SIMPLE_VOICE_BASE}/seniors/me`;
 export const CREATE_SIMPLE_VOICE = (juniorId: number) =>
   `${SIMPLE_VOICE_BASE}/seniors/me/juniors/${juniorId}`;
+
+export const GET_JUNIOR_VOICES = `${SIMPLE_VOICE_BASE}/juniors/me`;
