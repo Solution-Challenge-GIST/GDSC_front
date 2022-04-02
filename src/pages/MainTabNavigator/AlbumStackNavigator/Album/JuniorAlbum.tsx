@@ -54,6 +54,7 @@ export default function JuniorAlbum() {
                   id={item.album_id}
                   memo={item.memo.content}
                   type={my.role}
+                  emotion={item.emotion}
                   username={item.junior.name}
                   isReplied={item.is_replied}
                   uri={item.img}
