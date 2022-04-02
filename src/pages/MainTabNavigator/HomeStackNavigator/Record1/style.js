@@ -2,6 +2,7 @@ import { StyleSheet } from 'react-native';
 import {
   seniorMediumFontSize,
   mediumFontWeight,
+  fontFamily,
 } from '../../../../style/share';
 import { getDisplayHeight, getDisplayWidth } from '../../../../utility';
 
@@ -12,7 +13,7 @@ export const record1Styles = StyleSheet.create({
     marginRight: getDisplayWidth(27),
   },
   text: {
-    fontWeight: mediumFontWeight,
+    fontFamily: fontFamily.RobotoMedium,
     fontSize: seniorMediumFontSize,
     textAlign: 'center',
   },

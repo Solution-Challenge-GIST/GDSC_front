@@ -3,6 +3,7 @@ import {
   boldFontWeight,
   seniorMediumFontSize,
   shadow,
+  fontFamily,
 } from '../../../../style/share';
 import { getDisplayHeight, getDisplayWidth } from '../../../../utility';
 export const Memostyles = StyleSheet.create({
@@ -15,7 +16,7 @@ export const Memostyles = StyleSheet.create({
   titleMemo: {
     marginRight: getDisplayWidth(11),
   },
-  title: { fontWeight: boldFontWeight, fontSize: seniorMediumFontSize },
+  title: { fontFamily: fontFamily.RobotoBold, fontSize: seniorMediumFontSize },
   emtioncontainer: {
     width: getDisplayWidth(290),
     height: getDisplayHeight(46),
@@ -49,7 +50,7 @@ export const Memostyles = StyleSheet.create({
     borderWidth: 1,
   },
   Memotitle: {
-    fontWeight: boldFontWeight,
+    fontFamily: fontFamily.RobotoBold,
     fontSize: 20,
     marginTop: getDisplayHeight(20),
     marginBottom: getDisplayHeight(13),
@@ -57,7 +58,7 @@ export const Memostyles = StyleSheet.create({
     marginRight: getDisplayWidth(17),
   },
   Memotext: {
-    fontWeight: boldFontWeight,
+    fontFamily: fontFamily.RobotoBold,
     marginTop: getDisplayHeight(16),
     marginLeft: getDisplayWidth(17),
     marginRight: getDisplayWidth(17),

@@ -1,5 +1,9 @@
 import { StyleSheet } from 'react-native';
-import { seniorMediumFontSize, mediumFontWeight } from '../../style/share';
+import {
+  seniorMediumFontSize,
+  mediumFontWeight,
+  fontFamily,
+} from '../../style/share';
 import { getDisplayHeight, getDisplayWidth } from '../../utility';
 export const signUpstyles = StyleSheet.create({
   position: {
@@ -12,7 +16,7 @@ export const signUpstyles = StyleSheet.create({
     width: getDisplayWidth(97),
   },
   MainText: {
-    fontWeight: mediumFontWeight,
+    fontFamily: fontFamily.RobotoMedium,
     fontSize: seniorMediumFontSize,
     marginBottom: getDisplayHeight(20),
   },
@@ -45,7 +49,7 @@ export const signUpstyles = StyleSheet.create({
     alignItems: 'center',
   },
   finalText: {
-    fontWeight: mediumFontWeight,
+    fontFamily: fontFamily.RobotoMedium,
     fontSize: seniorMediumFontSize,
   },
   finalbutton: {

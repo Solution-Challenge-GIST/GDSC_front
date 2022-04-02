@@ -5,6 +5,7 @@ import {
   boxBorderRadious,
   seniorMediumFontSize,
   shadow,
+  fontFamily,
 } from '../../../style/share';
 import { getDisplayHeight, getDisplayWidth } from '../../../utility';
 
@@ -25,7 +26,7 @@ export const AlbumSeniorVoiceStyles = StyleSheet.create({
 
   font: {
     fontSize: seniorMediumFontSize,
-    fontWeight: boldFontWeight,
+    fontFamily: fontFamily.RobotoBold,
   },
   replyStatus: {
     position: 'absolute',

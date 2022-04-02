@@ -2,11 +2,12 @@ import { StyleSheet } from 'react-native';
 import {
   seniorMediumFontSize,
   mediumFontWeight,
+  fontFamily,
 } from '../../../../style/share';
 import { getDisplayHeight, getDisplayWidth } from '../../../../utility';
 import { Commonbutton } from '../../../../components/button/style';
 const textForm = {
-  fontWeight: mediumFontWeight,
+  fontFamily: fontFamily.RobotoMedium,
   fontSize: seniorMediumFontSize,
 };
 export const profileStyles = StyleSheet.create({
@@ -33,11 +34,11 @@ export const profileStyles = StyleSheet.create({
     marginTop: getDisplayHeight(10),
   },
   profileName_big: {
-    fontWeight: '700',
+    fontFamily: fontFamily.RobotoBold,
     fontSize: 48,
   },
   profileName_small: {
-    fontWeight: '700',
+    fontFamily: fontFamily.RobotoBold,
     fontSize: 18,
   },
   infoComponent: {

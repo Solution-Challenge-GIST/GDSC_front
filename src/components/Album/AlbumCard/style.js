@@ -3,6 +3,7 @@ import {
   bgColor,
   boldFontWeight,
   boxBorderRadious,
+  fontFamily,
   juniorMediumFontSize,
   juniorSmallFontSize,
   mediumFontWeight,
@@ -46,17 +47,18 @@ export const AlbumCardStyles = StyleSheet.create({
 
   cardTitle: {
     marginVertical: getDisplayHeight(8),
-    fontWeight: mediumFontWeight,
+    fontFamily: fontFamily.RobotoMedium,
     fontSize: juniorMediumFontSize,
   },
 
   cardMemo: {
-    fontWeight: mediumFontWeight,
+    fontFamily: fontFamily.RobotoMedium,
     fontSize: juniorSmallFontSize,
   },
 
   seniorUserInfo: {
-    fontWeight: boldFontWeight,
+    fontFamily: fontFamily.RobotoBold,
+
     fontSize: seniorMediumFontSize,
     left: getDisplayWidth(5),
     top: getDisplayHeight(4),
@@ -69,7 +71,7 @@ export const AlbumCardStyles = StyleSheet.create({
     height: getDisplayWidth(28),
   },
   MainUserInfo: {
-    fontWeight: boldFontWeight,
+    fontFamily: fontFamily.RobotoBold,
     fontSize: seniorBigFontSize,
   },
   emotion: {

@@ -1,5 +1,10 @@
 import { StyleSheet } from 'react-native';
-import { shadow, mediumFontWeight, bgColor } from '../../style/share';
+import {
+  shadow,
+  mediumFontWeight,
+  bgColor,
+  fontFamily,
+} from '../../style/share';
 import { getDisplayHeight, getDisplayWidth } from '../../utility';
 const commonCalender = {
   ...shadow,
@@ -18,7 +23,7 @@ export const calenderStyles = StyleSheet.create({
     height: getDisplayHeight(24),
   },
   smallMonthFont: {
-    fontWeight: mediumFontWeight,
+    fontFamily: fontFamily.RobotoMedium,
     fontSize: 17,
   },
   smallDay: {
@@ -27,7 +32,7 @@ export const calenderStyles = StyleSheet.create({
     height: getDisplayHeight(48),
   },
   smallDayFont: {
-    fontWeight: mediumFontWeight,
+    fontFamily: fontFamily.RobotoMedium,
     fontSize: 36,
   },
   smallDate: {
@@ -36,7 +41,7 @@ export const calenderStyles = StyleSheet.create({
     height: getDisplayHeight(18),
   },
   smallDateFont: {
-    fontWeight: mediumFontWeight,
+    fontFamily: fontFamily.RobotoMedium,
     fontSize: 14,
   },
   bigCalender: {
@@ -52,7 +57,7 @@ export const calenderStyles = StyleSheet.create({
   },
   bigMonthFont: {
     fontSize: 20,
-    fontWeight: mediumFontWeight,
+    fontFamily: fontFamily.RobotoMedium,
   },
   bigDay: {
     width: '100%',
@@ -60,7 +65,7 @@ export const calenderStyles = StyleSheet.create({
     alignItems: 'center',
   },
   bigDayFont: {
-    fontWeight: mediumFontWeight,
+    fontFamily: fontFamily.RobotoMedium,
     fontSize: 46,
   },
   bigDate: {
@@ -69,7 +74,7 @@ export const calenderStyles = StyleSheet.create({
     alignItems: 'center',
   },
   bigDateFont: {
-    fontWeight: mediumFontWeight,
+    fontFamily: fontFamily.RobotoMedium,
     fontSize: 17,
   },
 });

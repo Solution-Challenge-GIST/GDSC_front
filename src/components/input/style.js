@@ -1,11 +1,15 @@
 import { StyleSheet } from 'react-native';
-import { mediumFontWeight, seniorMediumFontSize } from '../../style/share';
+import {
+  mediumFontWeight,
+  seniorMediumFontSize,
+  fontFamily,
+} from '../../style/share';
 import { getDisplayHeight, getDisplayWidth } from '../../utility';
 export const styles = StyleSheet.create({
   NormalInput: {
     width: getDisplayWidth(376),
     height: getDisplayHeight(81),
-    fontWeight: mediumFontWeight,
+    fontFamily: fontFamily.RobotoMedium,
     fontSize: seniorMediumFontSize,
     borderColor: '#C4C4C4',
     borderWidth: 2,
@@ -20,12 +24,12 @@ export const styles = StyleSheet.create({
     borderRadius: 27,
   },
   ProfileValue: {
-    fontWeight: mediumFontWeight,
+    fontFamily: fontFamily.RobotoMedium,
     fontSize: seniorMediumFontSize,
   },
   ProfileName: {
     marginBottom: 7,
-    fontWeight: mediumFontWeight,
+    fontFamily: fontFamily.RobotoMedium,
     fontSize: seniorMediumFontSize,
   },
 });

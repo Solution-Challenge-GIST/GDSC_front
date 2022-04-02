@@ -3,13 +3,14 @@ import {
   baseColor,
   mediumFontWeight,
   seniorMediumFontSize,
+  fontFamily,
 } from '../../style/share';
 import { getDisplayHeight, getDisplayWidth } from '../../utility';
 
 export const TextStyles = StyleSheet.create({
   ValueTextView: {
     width: getDisplayWidth(401),
-    fontWeight: mediumFontWeight,
+    fontFamily: fontFamily.RobotoMedium,
     fontSize: seniorMediumFontSize,
     borderColor: '#C4C4C4',
     borderRadius: 27,
@@ -18,12 +19,12 @@ export const TextStyles = StyleSheet.create({
   },
   ValueText: {
     flexShrink: 1,
-    fontWeight: mediumFontWeight,
+    fontFamily: fontFamily.RobotoMedium,
     fontSize: seniorMediumFontSize,
   },
   NameText: {
     marginBottom: 7,
-    fontWeight: mediumFontWeight,
+    fontFamily: fontFamily.RobotoMedium,
     fontSize: seniorMediumFontSize,
   },
 });

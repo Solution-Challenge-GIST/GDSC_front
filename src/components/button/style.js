@@ -4,6 +4,7 @@ import {
   mediumFontWeight,
   seniorMediumFontSize,
   shadow,
+  fontFamily,
 } from '../../style/share';
 import { getDisplayHeight, getDisplayWidth } from '../../utility';
 
@@ -35,7 +36,7 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
   },
   buttonfont: {
-    fontWeight: mediumFontWeight,
+    fontFamily: fontFamily.RobotoMedium,
     fontSize: seniorMediumFontSize,
   },
   Relativebutton: {

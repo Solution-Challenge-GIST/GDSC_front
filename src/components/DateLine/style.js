@@ -3,6 +3,7 @@ import {
   juniorMediumFontSize,
   mediumFontWeight,
   seniorMediumFontSize,
+  fontFamily,
 } from '../../style/share';
 
 export const DateLineStyles = StyleSheet.create({
@@ -14,7 +15,7 @@ export const DateLineStyles = StyleSheet.create({
     borderColor: '#494539',
   },
   juniorText: {
-    fontWeight: mediumFontWeight,
+    fontFamily: fontFamily.RobotoMedium,
     fontSize: juniorMediumFontSize,
     marginHorizontal: '2%',
   },

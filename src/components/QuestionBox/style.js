@@ -4,6 +4,7 @@ import {
   shadow,
   boldFontWeight,
   bgColor,
+  fontFamily,
 } from '../../style/share';
 import { getDisplayHeight, getDisplayWidth } from '../../utility';
 
@@ -21,7 +22,7 @@ export const questionBoxStyles = StyleSheet.create({
   },
   font: {
     width: getDisplayWidth(280),
-    fontWeight: boldFontWeight,
+    fontFamily: fontFamily.RobotoBold,
     fontSize: seniorMediumFontSize,
   },
 });
