@@ -50,10 +50,11 @@ export default function Detail({ route }) {
           />
 
           {reply.results.map(item => {
-            const { replier, created_date, day, voice, emotion } = item;
+            const { reply_id, replier, created_date, day, voice, emotion } =
+              item;
             const [year, month, date] = created_date.split('-');
             return (
-              <View style={DetailStyles.voiceContainer}>
+              <View key={reply_id} style={DetailStyles.voiceContainer}>
                 <VoiceReply
                   username={replier.name}
                   voice={voice}

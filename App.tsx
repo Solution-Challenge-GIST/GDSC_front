@@ -27,7 +27,8 @@ async function delay_splash() {
 }
 
 export default function App() {
-  LogBox.ignoreAllLogs()
+  // LogBox.ignoreAllLogs();
+  LogBox.ignoreLogs(['Require cycle:', '[react-native-gesture-handler]']);
   delay_splash();
   return (
     <QueryClientProvider client={queryClient}>
@@ -37,6 +38,7 @@ export default function App() {
           <Stack.Screen name="Signup" component={Signup} />
         </Stack.Navigator>
       </NavigationContainer>
+      {/* <StatusBar style="dark" /> */}
     </QueryClientProvider>
   );
 }

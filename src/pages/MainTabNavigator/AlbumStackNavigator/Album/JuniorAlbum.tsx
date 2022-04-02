@@ -49,9 +49,8 @@ export default function JuniorAlbum() {
           </View>
           {juniorAlbum.results.map(item => {
             return (
-              <View style={albumStyles.card}>
+              <View key={item.album_id} style={albumStyles.card}>
                 <AlbumCard
-                  key={item.album_id}
                   id={item.album_id}
                   memo={item.memo.content}
                   type={my.role}
@@ -65,9 +64,8 @@ export default function JuniorAlbum() {
           })}
           {voice.results.map(item => {
             return (
-              <View style={albumStyles.voice}>
+              <View key={item.simplevoice_id} style={albumStyles.voice}>
                 <AlbumJuniorVoice
-                  key={item.simplevoice_id}
                   id={item.simplevoice_id}
                   isReplied={false}
                   voiceURI={item.voice}
@@ -78,9 +76,8 @@ export default function JuniorAlbum() {
           })}
           {/* {voiceData.map(item => {
             return (
-              <View style={albumStyles.voice}>
+              <View key={item.id} style={albumStyles.voice}>
                 <AlbumJuniorVoice
-                  key={item.id}
                   id={item.id}
                   isReplied={item.isReplied}
                   question={item.question}

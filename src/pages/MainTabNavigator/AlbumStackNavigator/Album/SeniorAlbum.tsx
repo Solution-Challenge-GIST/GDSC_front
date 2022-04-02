@@ -50,9 +50,8 @@ export default function SeniorAlbum() {
           </View>
           {seniorAlbum.results.map(item => {
             return (
-              <View style={albumStyles.card}>
+              <View key={item.album_id} style={albumStyles.card}>
                 <AlbumCard
-                  key={item.album_id}
                   id={item.album_id}
                   type={me.role}
                   emotion={item.emotion}
@@ -66,9 +65,8 @@ export default function SeniorAlbum() {
           })}
           {voice.results.map(item => {
             return (
-              <View style={albumStyles.voice}>
+              <View key={item.simplevoice_id} style={albumStyles.voice}>
                 <AlbumSeniorVoice
-                  key={item.simplevoice_id}
                   isReplied={false}
                   id={item.simplevoice_id}
                   username={item.junior.name}

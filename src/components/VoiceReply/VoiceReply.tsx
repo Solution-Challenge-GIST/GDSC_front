@@ -10,6 +10,7 @@ interface Props {
   month: string;
   day: string;
   date: string;
+  emotion: 'HAPPY' | 'SOSO' | 'SAD' | 'ANGRY';
 }
 
 const emotions = {

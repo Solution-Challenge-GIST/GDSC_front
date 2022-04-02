@@ -50,9 +50,11 @@ export default function SeniorHome() {
               if (item.is_replied === false) {
                 const [year, month, date] = item.created_date.split('-');
                 return (
-                  <View style={{ marginBottom: getDisplayHeight(30) }}>
+                  <View
+                    key={item.album_id}
+                    style={{ marginBottom: getDisplayHeight(30) }}
+                  >
                     <MainAlbumCard
-                      key={item.album_id}
                       emotion={item.emotion}
                       id={item.album_id}
                       username={item.junior.name}

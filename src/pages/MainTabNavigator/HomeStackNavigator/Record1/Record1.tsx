@@ -29,13 +29,12 @@ export default function Record1() {
       <View style={{ flex: 1 }}>
         <ScrollView bounces={true} style={{ marginBottom: 92 }}>
           <View style={record1Styles.position}>
-            <Text style={record1Styles.text}>누구에게 음성을 보낼까요?</Text>
+            <Text style={record1Styles.text}>Who get your voice?</Text>
             {data.map((item: Relationship) => {
               const { junior, relation } = item;
               return (
-                <View style={{ marginTop: 30 }}>
+                <View key={junior.junior_id} style={{ marginTop: 30 }}>
                   <Relativebutton
-                    key={junior.junior_id}
                     name={junior.name}
                     relative={relation}
                     onPress={() => goRecord2(item)}
