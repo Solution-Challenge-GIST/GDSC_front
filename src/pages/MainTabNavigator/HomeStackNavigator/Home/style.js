@@ -2,12 +2,13 @@ import { StyleSheet } from 'react-native';
 import {
   mediumFontWeight,
   seniorMediumFontSize,
+  fontFamily,
 } from '../../../../style/share';
 import { getDisplayHeight, getDisplayWidth } from '../../../../utility';
 export const HomeStyles = StyleSheet.create({
   font: {
     fontSize: seniorMediumFontSize,
-    fontWeight: mediumFontWeight,
+    fontFamily: fontFamily.RobotoMedium,
   },
   MainContainer: {
     marginTop: getDisplayHeight(75),

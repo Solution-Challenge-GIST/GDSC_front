@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { ScrollView, View } from 'react-native';
 import DetailAlbumCard from '../../../components/Album/AlbumCard/DetailAlbumCard';
-
 import MainAlbumCard from '../../../components/Album/AlbumCard/MainAlbumCard';
 import AudioButton from '../../../components/button/AudioButton';
 import VoiceReply from '../../../components/VoiceReply/VoiceReply';

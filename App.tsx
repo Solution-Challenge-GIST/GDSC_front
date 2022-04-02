@@ -9,6 +9,7 @@ import { BASE_URL } from './src/constants/urls';
 import { JUNIOR_TOKEN, SENIOR_TOKEN } from './src/constants/token';
 import * as SplashScreen from 'expo-splash-screen';
 import { LogBox } from 'react-native';
+import * as Font from 'expo-font';
 
 const Stack = createStackNavigator();
 export const queryClient = new QueryClient();
@@ -22,13 +23,20 @@ function sleep(ms: number) {
 
 async function delay_splash() {
   await SplashScreen.preventAutoHideAsync();
-  await sleep(2500);
+  await sleep(2000);
   await SplashScreen.hideAsync();
 }
-
+const getFonts = () => {
+  return Font.loadAsync({
+    'roboto-regular': require('./assets/fonts/Roboto-Regular.ttf'),
+    'roboto-medium': require('./assets/fonts/Roboto-Medium.ttf'),
+    'roboto-bold': require('./assets/fonts/Roboto-Bold.ttf'),
+  });
+};
 export default function App() {
   // LogBox.ignoreAllLogs();
   LogBox.ignoreLogs(['Require cycle:', '[react-native-gesture-handler]']);
+  getFonts();
   delay_splash();
   return (
     <QueryClientProvider client={queryClient}>
@@ -38,7 +46,6 @@ export default function App() {
           <Stack.Screen name="Signup" component={Signup} />
         </Stack.Navigator>
       </NavigationContainer>
-      {/* <StatusBar style="dark" /> */}
     </QueryClientProvider>
   );
 }

@@ -5,6 +5,7 @@ import {
   mediumFontWeight,
   seniorMediumFontSize,
   shadow,
+  fontFamily,
 } from '../../style/share';
 
 export const voiceReplyStyles = StyleSheet.create({
@@ -22,7 +23,7 @@ export const voiceReplyStyles = StyleSheet.create({
   },
   username: {
     fontSize: seniorMediumFontSize,
-    fontWeight: mediumFontWeight,
+    fontFamily: fontFamily.RobotoMedium,
     marginBottom: getDisplayHeight(16),
   },
   button: {

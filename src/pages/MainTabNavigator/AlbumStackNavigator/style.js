@@ -1,5 +1,9 @@
 import { StyleSheet } from 'react-native';
-import { mediumFontWeight, seniorMediumFontSize } from '../../../style/share';
+import {
+  mediumFontWeight,
+  seniorMediumFontSize,
+  fontFamily,
+} from '../../../style/share';
 import { getDisplayHeight, getDisplayWidth } from '../../../utility';
 
 export const albumStyles = StyleSheet.create({
@@ -8,7 +12,7 @@ export const albumStyles = StyleSheet.create({
     marginLeft: getDisplayWidth(27),
   },
   titleText: {
-    fontWeight: mediumFontWeight,
+    fontFamily: fontFamily.RobotoMedium,
     fontSize: seniorMediumFontSize,
   },
   dateLineSenior: {

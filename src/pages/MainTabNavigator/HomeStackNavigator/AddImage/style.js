@@ -2,6 +2,7 @@ import { StyleSheet } from 'react-native';
 import {
   mediumFontWeight,
   seniorMediumFontSize,
+  fontFamily,
 } from '../../../../style/share';
 import { getDisplayHeight, getDisplayWidth } from '../../../../utility';
 
@@ -15,7 +16,7 @@ export const AddImageStyles = StyleSheet.create({
   },
   font: {
     fontSize: seniorMediumFontSize,
-    fontWeight: mediumFontWeight,
+    fontFamily: fontFamily.RobotoMedium,
   },
   buttonGap: {
     alignItems: 'center',
