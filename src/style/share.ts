@@ -4,16 +4,24 @@ import { getDisplayWidth } from '../utility';
 export const baseColor = '#FFF7DA';
 export const bgColor = '#fff';
 
-// fontWeight
+// font
+// a. fontWeight
 export const mediumFontWeight = '400';
-export const semiBoldFontWeight = '600';
+export const semiBoldFontWeight = '500';
 export const boldFontWeight = '700';
 
-// fontSize
+// b. fontSize
 export const seniorMediumFontSize = 28;
 export const juniorMediumFontSize = 18;
 export const juniorSmallFontSize = 11;
 export const seniorBigFontSize = 44;
+
+// c. fontFamily
+export const fontFamily = {
+  RobotoMedium: 'roboto-regular',
+  RobotoSemiBold: 'roboto-medium',
+  RobotoBold: 'roboto-bold',
+};
 
 // etc
 export const boxBorderRadious = getDisplayWidth(26);
