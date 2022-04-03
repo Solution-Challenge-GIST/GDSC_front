@@ -8,8 +8,12 @@ import { useGetSeniorAlbums } from '../../../../hooks/albums/useGetSeniorAlbums'
 import { getDisplayHeight } from '../../../../utility';
 import { HomeStyles } from './style';
 import { useCallback } from 'react';
+import { useRef } from 'react';
+import { useScrollToTop } from '@react-navigation/native';
 
 export default function SeniorHome() {
+  const ref = useRef(null);
+  useScrollToTop(ref);
   const navigation = useNavigation();
   const {
     data: albumSenior,
@@ -29,7 +33,7 @@ export default function SeniorHome() {
   if (!isSeniorLading) {
     return (
       <View>
-        <ScrollView style={{ marginBottom: 92 }}>
+        <ScrollView ref={ref} style={{ marginBottom: 92 }}>
           <View style={HomeStyles.MainContainer}>
             <Text style={HomeStyles.font}>There's a question!</Text>
           </View>

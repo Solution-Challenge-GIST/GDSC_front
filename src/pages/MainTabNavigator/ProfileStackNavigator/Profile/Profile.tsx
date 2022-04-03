@@ -8,8 +8,12 @@ import { getDisplayHeight } from '../../../../utility';
 import NormalText from '../../../../components/CustomText/NormalText';
 import { useME } from '../../../../hooks/accounts/useMe';
 import { useSeniorProfileUpdateMutation } from '../../../../hooks/seniors/useSeniorProfileUpdateMutation';
+import { useRef } from 'react';
+import { useScrollToTop } from '@react-navigation/native';
 
 export default function Profile() {
+  const ref = useRef(null);
+  useScrollToTop(ref);
   const { data, isLoading } = useME();
   if (data.role === 'SENIOR' && !isLoading) {
     const { mutate, isLoading: SeniorProfileLoading } =
@@ -54,7 +58,11 @@ export default function Profile() {
     if (!SeniorProfileLoading) {
       return (
         <SafeAreaView>
-          <ScrollView contentContainerStyle={{ flexGrow: 1 }} bounces={true}>
+          <ScrollView
+            ref={ref}
+            contentContainerStyle={{ flexGrow: 1 }}
+            bounces={true}
+          >
             <View style={{ height: getDisplayHeight(1400) }}>
               <View style={profileStyles.imageComponent}>
                 <Text style={profileStyles.info}>My Profile</Text>

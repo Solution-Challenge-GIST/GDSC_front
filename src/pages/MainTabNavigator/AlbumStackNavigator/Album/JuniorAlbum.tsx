@@ -8,6 +8,8 @@ import AlbumJuniorVoice from '../../../../components/Album/AlbumJuniorVoice/Albu
 import { useGetJuniorAlbums } from '../../../../hooks/albums/useGetJuniorAlbums';
 import { useME } from '../../../../hooks/accounts/useMe';
 import { useGetJuniorVoices } from '../../../../hooks/simplevoices/useGetJuniorVoices';
+import { useRef } from 'react';
+import { useScrollToTop } from '@react-navigation/native';
 
 const weekData = {
   year: '2022',
@@ -17,6 +19,8 @@ const weekData = {
 };
 
 export default function JuniorAlbum() {
+  const ref = useRef(null);
+  useScrollToTop(ref);
   const { data: my, isLoading: isMeLoading } = useME();
   const {
     data: juniorAlbum,
@@ -34,6 +38,7 @@ export default function JuniorAlbum() {
     return (
       <View>
         <ScrollView
+          ref={ref}
           bounces={true}
           style={{ marginBottom: 92 }}
           contentContainerStyle={{
