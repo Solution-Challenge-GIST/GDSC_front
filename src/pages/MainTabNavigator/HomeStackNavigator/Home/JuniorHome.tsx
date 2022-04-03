@@ -8,6 +8,8 @@ import { useGetJuniorAlbums } from '../../../../hooks/albums/useGetJuniorAlbums'
 import { getDisplayHeight } from '../../../../utility';
 import { HomeStyles } from './style';
 import { useCallback } from 'react';
+import { useRef } from 'react';
+import { useScrollToTop } from '@react-navigation/native';
 
 export default function JuniorHome() {
   const navigation = useNavigation();
@@ -24,10 +26,12 @@ export default function JuniorHome() {
   const onPress = () => {
     navigation.navigate('AddImage');
   };
+  const ref = useRef(null);
+  useScrollToTop(ref);
   if (!isJuniorLoading) {
     return (
       <View>
-        <ScrollView style={{ marginBottom: 92 }}>
+        <ScrollView ref={ref} style={{ marginBottom: 92 }}>
           <View style={HomeStyles.MainContainer}>
             <Text style={HomeStyles.font}>There's a question!</Text>
           </View>

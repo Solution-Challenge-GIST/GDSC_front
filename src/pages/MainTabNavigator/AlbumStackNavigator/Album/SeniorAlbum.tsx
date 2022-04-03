@@ -8,6 +8,8 @@ import { useGetSeniorAlbums } from '../../../../hooks/albums/useGetSeniorAlbums'
 import { useME } from '../../../../hooks/accounts/useMe';
 import { useGetSeniorVoices } from '../../../../hooks/simplevoices/useGetSeniorVoices';
 import { useFocusEffect } from '@react-navigation/native';
+import { useRef } from 'react';
+import { useScrollToTop } from '@react-navigation/native';
 
 const weekData = {
   year: '2022',
@@ -17,6 +19,8 @@ const weekData = {
 };
 
 export default function SeniorAlbum() {
+  const ref = useRef(null);
+
   const {
     data: seniorAlbum,
     isLoading: isSeniorAlbumLoading,
@@ -30,11 +34,12 @@ export default function SeniorAlbum() {
       refetchSeniorAlbum();
     }, []),
   );
-
+  useScrollToTop(ref);
   if (!isSeniorAlbumLoading && !voiceLoading) {
     return (
       <View>
         <ScrollView
+          ref={ref}
           bounces={true}
           style={{ marginBottom: 92 }}
           contentContainerStyle={{
