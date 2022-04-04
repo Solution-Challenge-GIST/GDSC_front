@@ -53,6 +53,7 @@ export default function AudioButton({ albumId }: { albumId: number }) {
       mutate(data, {
         onSuccess: data => {
           console.log(data);
+          queryClient.invalidateQueries('useGetAlbumByAlbumId');
           queryClient.invalidateQueries('useGetRepliesByAlbumId');
         },
       });
