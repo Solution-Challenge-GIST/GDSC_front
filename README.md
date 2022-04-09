@@ -19,7 +19,7 @@ you can change demo user by changing token in App.tsx (we set 2 tokens. one is j
 
 ## Demo Video
 
-https://www.youtube.com/watch?v=Wona-gkLTUU
+https://www.youtube.com/watch?v=LrO6cmoMTF4
 
 ## References
 
