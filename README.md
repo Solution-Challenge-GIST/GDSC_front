@@ -19,6 +19,8 @@ Expo(React Native), react-query, axios
 
 you can change demo user by changing token in App.tsx (we set 2 tokens. one is junior and one is senior)
 
+- 2022.04.10 : We change expired tokens
+
 ## Demo Video
 
 https://www.youtube.com/watch?v=LrO6cmoMTF4
