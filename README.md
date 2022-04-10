@@ -6,6 +6,8 @@ Expo(React Native), react-query, axios
 
 ## How to run
 
+## Now the 'sample user token' is expired. we will change to valid token as soon as possible. (maximum 1 Day)
+
 1. `npm install --global expo-cli`
 2. `npm i`
 3. `expo start`
