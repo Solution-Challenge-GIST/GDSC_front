@@ -1,9 +1,8 @@
 import { useNavigation } from '@react-navigation/native';
 import { Image, Text, TouchableOpacity, View } from 'react-native';
+import { emotions } from '../../../constants/emotions';
 import { useME } from '../../../hooks/accounts/useMe';
-import { albumStyles } from '../../../pages/MainTabNavigator/AlbumStackNavigator/style';
 import { AlbumCardInfo } from '../../../type';
-import { getDisplayWidth } from '../../../utility';
 import Calendar from '../../calendar/Calendar';
 import { AlbumCardStyles } from './style';
 interface MainAlbum extends AlbumCardInfo {
@@ -11,12 +10,6 @@ interface MainAlbum extends AlbumCardInfo {
   day: string;
   date: string;
 }
-export const emotions = {
-  SAD: require('./images/sad.png'),
-  ANGRY: require('./images/angry.png'),
-  HAPPY: require('./images/happy.png'),
-  SOSO: require('./images/soso.png'),
-};
 
 export default function MainAlbumCard(props: MainAlbum) {
   const navigation = useNavigation();
@@ -60,7 +53,7 @@ export default function MainAlbumCard(props: MainAlbum) {
               source={require('../images/needReply.png')}
             />
           )}
-          <Image style={AlbumCardStyles.emotion} source={emotions[emotion]} />
+          <Text style={AlbumCardStyles.emotion}>{emotions[emotion]}</Text>
         </View>
       </TouchableOpacity>
     </View>
