@@ -76,9 +76,10 @@ export const AlbumCardStyles = StyleSheet.create({
   },
   emotion: {
     position: 'absolute',
-    width: getDisplayWidth(84),
-    height: getDisplayWidth(84),
-    top: getDisplayHeight(270),
+    // width: getDisplayWidth(84),
+    // height: getDisplayWidth(84),
+    fontSize: parseInt(getDisplayWidth(84)),
+    top: getDisplayHeight(260),
     right: getDisplayWidth(4),
   },
   albumeEmotion: {

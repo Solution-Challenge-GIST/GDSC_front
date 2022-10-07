@@ -2,8 +2,8 @@ import { View, Text, TouchableOpacity, Image } from 'react-native';
 import React, { useEffect, useState } from 'react';
 import { voiceReplyStyles } from './style';
 import Calendar from '../calendar/Calendar';
-import { getDisplayWidth } from '../../utility';
 import { Audio } from 'expo-av';
+import { emotions } from '../../constants/emotions';
 interface Props {
   username: string;
   voice: string;
@@ -12,13 +12,6 @@ interface Props {
   date: string;
   emotion: 'HAPPY' | 'SOSO' | 'SAD' | 'ANGRY';
 }
-
-const emotions = {
-  HAPPY: '😄',
-  SOSO: '🙂',
-  SAD: '😢',
-  ANGRY: '😠',
-};
 
 export default function VoiceReply(props: Props) {
   const { username, voice, month, day, date, emotion } = props;
